@@ -41,6 +41,7 @@ class OTPViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         configureActions()
         otpView.applyTexts(who: who)
+        otpView.OTPField.delegate = self
     }
     
     func configureActions() {
@@ -57,9 +58,21 @@ class OTPViewController: UIViewController {
             if code.count < 4 {
                 otpView.OTPField.becomeFirstResponder()
             } else if code == "0215" {
-                print("success!")
+                otpView.handleDisappearAnimation { done in
+                    if done {
+                        print("move to new screen")
+                    }
+                }
             } else {
-                print("show error")
+                otpView.errorLabel.isHidden = false
         }
+    }
+}
+
+//MARK: - UITextFieldDelegate
+
+extension OTPViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        otpView.errorLabel.isHidden = true
     }
 }

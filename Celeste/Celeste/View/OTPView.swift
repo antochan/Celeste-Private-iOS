@@ -63,6 +63,16 @@ class OTPView: UIView {
         return button
     }()
     
+    let errorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .red
+        label.font = .bellefair(size: 14)
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -97,6 +107,7 @@ class OTPView: UIView {
                            options: .curveEaseOut,
                            animations: {
                             self.titleLabel.alpha = 0
+                            self.OTPField.alpha = 0
                             self.titleLabel.transform = self.titleLabel.transform.translatedBy(x: 0, y: -UIScreen.main.bounds.height * 0.1)
             }) { (_) in
                 completion(true)
@@ -118,6 +129,7 @@ class OTPView: UIView {
                            options: .curveEaseOut,
                            animations: {
                             self.subtitleLabel.alpha = 0
+                            self.submitButton.alpha = 0
                             self.subtitleLabel.transform = self.subtitleLabel.transform.translatedBy(x: 0, y: -UIScreen.main.bounds.height * 0.1)
             }) { (_) in
                 completion(true)
@@ -130,9 +142,11 @@ class OTPView: UIView {
         case .lauren:
             titleLabel.text = "Hello Lauren."
             subtitleLabel.text = "Since Celeste is OUR baby, gotta make sure you're actually Lauren and not some random side hoe. Enter the passcode below to verify it's you."
+            errorLabel.text = "Wrong code! if you're Lauren, its okay honey try again! Think when did we start dating? If not, who the fuck are you go away!"
         case .antonio:
             titleLabel.text = "Suh Dude.."
             subtitleLabel.text = "psh, just enter the damn passcode you idiot."
+            errorLabel.text = "You set the fucking code you idiot!"
         }
     }
 }
@@ -147,7 +161,7 @@ private extension OTPView {
     }
     
     func configureSubviews() {
-        addSubviews(backButton, titleStack, OTPField, submitButton)
+        addSubviews(backButton, titleStack, OTPField, submitButton, errorLabel)
         titleStack.addArrangedSubviews(titleLabel, subtitleLabel)
     }
     
@@ -168,7 +182,11 @@ private extension OTPView {
             
             submitButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             submitButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: UIScreen.main.bounds.height * 0.15),
-            submitButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8)
+            submitButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
+            
+            errorLabel.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: Spacing.sixteen),
+            errorLabel.leadingAnchor.constraint(equalTo: submitButton.leadingAnchor),
+            errorLabel.trailingAnchor.constraint(equalTo: submitButton.trailingAnchor)
         ])
     }
 }
