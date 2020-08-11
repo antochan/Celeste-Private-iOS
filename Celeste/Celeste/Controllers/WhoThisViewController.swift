@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class WhoThisViewController: UIViewController {
     let whoThisView = WhoThisView()
@@ -15,7 +16,7 @@ class WhoThisViewController: UIViewController {
         super.loadView()
         view = whoThisView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureActions()
@@ -31,14 +32,27 @@ class WhoThisViewController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.whoThisView.handleDisappearAnimation { done in
                 if done {
-                    print("done")
+                    strongSelf.presentOTP(who: .lauren)
                 }
             }
         }
         
         whoThisView.antonioComponent.actions = { [ weak self] _ in
             guard let strongSelf = self else { return }
-            strongSelf.whoThisView.appearAnimation()
+            strongSelf.whoThisView.handleDisappearAnimation { done in
+                if done {
+                    strongSelf.presentOTP(who: .antonio)
+                }
+            }
+        }
+    }
+    
+    func presentOTP(who: Who) {
+        let otpViewController = OTPViewController(who: who)
+        otpViewController.isHeroEnabled = true
+        otpViewController.modalPresentationStyle = .fullScreen
+        present(otpViewController, animated: true) {
+            otpViewController.presented = true
         }
     }
 }

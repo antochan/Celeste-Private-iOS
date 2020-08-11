@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322049C16EDD46ABBFA81673 /* Pods_CelesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FEF4C276545AD4E642B260 /* Pods_CelesteTests.framework */; };
+		83CFCF2CB14EE076B7B685B5 /* Pods_Celeste_CelesteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBEE3AFDD113DC5C27EFDC1 /* Pods_Celeste_CelesteUITests.framework */; };
 		8A106D3F24E2445F00BE8D34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A106D3E24E2445F00BE8D34 /* AppDelegate.swift */; };
 		8A106D4124E2445F00BE8D34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A106D4024E2445F00BE8D34 /* SceneDelegate.swift */; };
 		8A106D4824E2446100BE8D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A106D4724E2446100BE8D34 /* Assets.xcassets */; };
@@ -27,6 +29,9 @@
 		8A7FD85E24E258040057F3C5 /* ComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */; };
 		8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */; };
 		8A7FD86024E258040057F3C5 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */; };
+		8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4224E2718D00582C74 /* OTPView.swift */; };
+		8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4424E2719900582C74 /* OTPViewController.swift */; };
+		B348A284F0F4A8D3E2F9CCC2 /* Pods_Celeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05ACA63F346BAF7357D43597 /* Pods_Celeste.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05ACA63F346BAF7357D43597 /* Pods_Celeste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celeste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A37066F509C56B830F93B0A /* Pods-CelesteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelesteTests.release.xcconfig"; path = "Target Support Files/Pods-CelesteTests/Pods-CelesteTests.release.xcconfig"; sourceTree = "<group>"; };
+		1A8D4535459EB57FEBC49670 /* Pods-Celeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste.debug.xcconfig"; path = "Target Support Files/Pods-Celeste/Pods-Celeste.debug.xcconfig"; sourceTree = "<group>"; };
+		487A4D94CC831D1E662B9805 /* Pods-Celeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste.release.xcconfig"; path = "Target Support Files/Pods-Celeste/Pods-Celeste.release.xcconfig"; sourceTree = "<group>"; };
+		4FBEE3AFDD113DC5C27EFDC1 /* Pods_Celeste_CelesteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celeste_CelesteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75FEF4C276545AD4E642B260 /* Pods_CelesteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CelesteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A106D3B24E2445F00BE8D34 /* Celeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A106D3E24E2445F00BE8D34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A106D4024E2445F00BE8D34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +84,11 @@
 		8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTableViewCell.swift; sourceTree = "<group>"; };
 		8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		8AB59B4224E2718D00582C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		8AB59B4424E2719900582C74 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		9C4F86D7151F380A1B101756 /* Pods-Celeste-CelesteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C91523BF7B46078610023ED9 /* Pods-CelesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelesteTests.debug.xcconfig"; path = "Target Support Files/Pods-CelesteTests/Pods-CelesteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA83AB9E7E9B216B007235BE /* Pods-Celeste-CelesteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.release.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B348A284F0F4A8D3E2F9CCC2 /* Pods_Celeste.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322049C16EDD46ABBFA81673 /* Pods_CelesteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +112,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CFCF2CB14EE076B7B685B5 /* Pods_Celeste_CelesteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66D578ADE2059CA0A481B17D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A8D4535459EB57FEBC49670 /* Pods-Celeste.debug.xcconfig */,
+				487A4D94CC831D1E662B9805 /* Pods-Celeste.release.xcconfig */,
+				9C4F86D7151F380A1B101756 /* Pods-Celeste-CelesteUITests.debug.xcconfig */,
+				FA83AB9E7E9B216B007235BE /* Pods-Celeste-CelesteUITests.release.xcconfig */,
+				C91523BF7B46078610023ED9 /* Pods-CelesteTests.debug.xcconfig */,
+				1A37066F509C56B830F93B0A /* Pods-CelesteTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6AACAFB653D4E0D4CA693FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05ACA63F346BAF7357D43597 /* Pods_Celeste.framework */,
+				4FBEE3AFDD113DC5C27EFDC1 /* Pods_Celeste_CelesteUITests.framework */,
+				75FEF4C276545AD4E642B260 /* Pods_CelesteTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A106D3224E2445F00BE8D34 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +150,8 @@
 				8A106D5424E2446100BE8D34 /* CelesteTests */,
 				8A106D5F24E2446200BE8D34 /* CelesteUITests */,
 				8A106D3C24E2445F00BE8D34 /* Products */,
+				66D578ADE2059CA0A481B17D /* Pods */,
+				6AACAFB653D4E0D4CA693FC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				8A106D6F24E2471400BE8D34 /* WhoThisViewController.swift */,
+				8AB59B4424E2719900582C74 /* OTPViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				8A106D7224E2474500BE8D34 /* WhoThisView.swift */,
+				8AB59B4224E2718D00582C74 /* OTPView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A106D6524E2446200BE8D34 /* Build configuration list for PBXNativeTarget "Celeste" */;
 			buildPhases = (
+				58567E847298321DE5C90F0B /* [CP] Check Pods Manifest.lock */,
 				8A106D3724E2445F00BE8D34 /* Sources */,
 				8A106D3824E2445F00BE8D34 /* Frameworks */,
 				8A106D3924E2445F00BE8D34 /* Resources */,
+				B384DD1633379CCAA3156F99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A106D6824E2446200BE8D34 /* Build configuration list for PBXNativeTarget "CelesteTests" */;
 			buildPhases = (
+				75D01DA9132E4CA615171518 /* [CP] Check Pods Manifest.lock */,
 				8A106D4D24E2446100BE8D34 /* Sources */,
 				8A106D4E24E2446100BE8D34 /* Frameworks */,
 				8A106D4F24E2446100BE8D34 /* Resources */,
@@ -246,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A106D6B24E2446200BE8D34 /* Build configuration list for PBXNativeTarget "CelesteUITests" */;
 			buildPhases = (
+				E4E746B01B6B6FA9090D1534 /* [CP] Check Pods Manifest.lock */,
 				8A106D5824E2446200BE8D34 /* Sources */,
 				8A106D5924E2446200BE8D34 /* Frameworks */,
 				8A106D5A24E2446200BE8D34 /* Resources */,
+				13BA429A2417D1D7A3C6E9C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,6 +382,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13BA429A2417D1D7A3C6E9C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58567E847298321DE5C90F0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Celeste-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75D01DA9132E4CA615171518 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CelesteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B384DD1633379CCAA3156F99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Celeste/Pods-Celeste-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Celeste/Pods-Celeste-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Celeste/Pods-Celeste-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4E746B01B6B6FA9090D1534 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Celeste-CelesteUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A106D3724E2445F00BE8D34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -341,6 +496,7 @@
 				8A106D3F24E2445F00BE8D34 /* AppDelegate.swift in Sources */,
 				8A7FD85A24E257D90057F3C5 /* Pressable.swift in Sources */,
 				8A7FD84A24E24F6F0057F3C5 /* Extensions.swift in Sources */,
+				8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */,
 				8A7FD85924E257D90057F3C5 /* PressScalable.swift in Sources */,
 				8A106D7624E24A3000BE8D34 /* Fonts.swift in Sources */,
 				8A106D7024E2471400BE8D34 /* WhoThisViewController.swift in Sources */,
@@ -348,6 +504,7 @@
 				8A7FD85824E257D90057F3C5 /* Components.swift in Sources */,
 				8A106D7324E2474500BE8D34 /* WhoThisView.swift in Sources */,
 				8A7FD85E24E258040057F3C5 /* ComponentTableViewCell.swift in Sources */,
+				8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */,
 				8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */,
 				8A106D4124E2445F00BE8D34 /* SceneDelegate.swift in Sources */,
 			);
@@ -512,6 +669,7 @@
 		};
 		8A106D6624E2446200BE8D34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A8D4535459EB57FEBC49670 /* Pods-Celeste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +688,7 @@
 		};
 		8A106D6724E2446200BE8D34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 487A4D94CC831D1E662B9805 /* Pods-Celeste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +707,7 @@
 		};
 		8A106D6924E2446200BE8D34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91523BF7B46078610023ED9 /* Pods-CelesteTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,6 +730,7 @@
 		};
 		8A106D6A24E2446200BE8D34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A37066F509C56B830F93B0A /* Pods-CelesteTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -592,6 +753,7 @@
 		};
 		8A106D6C24E2446200BE8D34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C4F86D7151F380A1B101756 /* Pods-Celeste-CelesteUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -612,6 +774,7 @@
 		};
 		8A106D6D24E2446200BE8D34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA83AB9E7E9B216B007235BE /* Pods-Celeste-CelesteUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

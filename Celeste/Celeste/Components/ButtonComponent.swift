@@ -95,17 +95,11 @@ extension ButtonComponent: HeightCalculatingComponent {
         public let style: Style
         public let text: String?
         public let icon: UIImage?
-        public let backgroundColor: UIColor
-        public let borderColor: UIColor
-        public let textColor: UIColor
         
-        public init(style: Style, text: String?, icon: UIImage? = nil, backgroundColor: UIColor, borderColor: UIColor, textColor: UIColor) {
+        public init(style: Style, text: String?, icon: UIImage? = nil) {
             self.style = style
             self.text = text
             self.icon = icon
-            self.backgroundColor = backgroundColor
-            self.borderColor = borderColor
-            self.textColor = textColor
         }
     }
     

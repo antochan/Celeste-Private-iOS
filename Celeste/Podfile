@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Celeste' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Celeste
+	pod 'Hero'
+  pod 'OTPTextField'
+
+  target 'CelesteTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CelesteUITests' do
+    # Pods for testing
+  end
+
+end

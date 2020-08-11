@@ -1,0 +1,20 @@
+PODS:
+  - Hero (1.5.0)
+  - OTPTextField (1.1.2)
+
+DEPENDENCIES:
+  - Hero
+  - OTPTextField
+
+SPEC REPOS:
+  trunk:
+    - Hero
+    - OTPTextField
+
+SPEC CHECKSUMS:
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  OTPTextField: 40130474e5fc0ac07782fa0bed346c9e81854e1d
+
+PODFILE CHECKSUM: 85889b2848983268ddd7c8f33bf34528ae53021a
+
+COCOAPODS: 1.8.4

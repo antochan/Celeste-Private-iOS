@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
+${BUILT_PRODUCTS_DIR}/OTPTextField/OTPTextField.framework
