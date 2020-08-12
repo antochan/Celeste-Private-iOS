@@ -9,6 +9,13 @@
 import UIKit
 
 class WhoThisView: UIView {
+    private enum Constants {
+        static let animateInDuration: TimeInterval = 0.2
+        static let animateInDelay: TimeInterval = 0.1
+        static let disappearDuration: TimeInterval = 0.4
+        static let transformHeight = -UIScreen.main.bounds.height * 0.1
+    }
+    
     private let titleStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,14 +76,14 @@ class WhoThisView: UIView {
     
     func appearAnimation() {
         titleLabel.transform = .identity
-        titleLabel.fadeIn(duration: 0.2, delay: 0.1)
+        titleLabel.fadeIn(duration: Constants.animateInDuration, delay: Constants.animateInDelay)
         subtitleLabel.transform = .identity
-        subtitleLabel.fadeIn(duration: 0.2, delay: 0.1)
-        userStack.fadeIn(duration: 0.2, delay: 0.1)
+        subtitleLabel.fadeIn(duration: Constants.animateInDuration, delay: Constants.animateInDelay)
+        userStack.fadeIn(duration: Constants.animateInDuration, delay: Constants.animateInDelay)
     }
     
     func handleDisappearAnimation(completion: @escaping (Bool) -> ()) {
-        UIView.animate(withDuration: 0.4,
+        UIView.animate(withDuration: Constants.disappearDuration,
                        delay: 0,
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 0.6,
@@ -84,7 +91,7 @@ class WhoThisView: UIView {
                        animations: {
                         self.titleLabel.transform = CGAffineTransform(translationX: -Spacing.sixteen, y: 0)
         }) { (_) in
-            UIView.animate(withDuration: 0.4,
+            UIView.animate(withDuration: Constants.disappearDuration,
                            delay: 0,
                            usingSpringWithDamping: 1,
                            initialSpringVelocity: 1,
@@ -92,28 +99,28 @@ class WhoThisView: UIView {
                            animations: {
                             self.userStack.alpha = 0
                             self.titleLabel.alpha = 0
-                            self.titleLabel.transform = self.titleLabel.transform.translatedBy(x: 0, y: -UIScreen.main.bounds.height * 0.1)
+                            self.titleLabel.transform = self.titleLabel.transform.translatedBy(x: 0, y: Constants.transformHeight)
             }) { (_) in
                 completion(true)
             }
         }
         
-        UIView.animate(withDuration: 0.4,
-                       delay: 0.4,
+        UIView.animate(withDuration: Constants.disappearDuration,
+                       delay: Constants.disappearDuration,
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 0.6,
                        options: .curveEaseOut,
                        animations: {
                         self.subtitleLabel.transform = CGAffineTransform(translationX: -Spacing.sixteen, y: 0)
         }) { (_) in
-            UIView.animate(withDuration: 0.4,
+            UIView.animate(withDuration: Constants.disappearDuration,
                            delay: 0,
                            usingSpringWithDamping: 1,
                            initialSpringVelocity: 1,
                            options: .curveEaseOut,
                            animations: {
                             self.subtitleLabel.alpha = 0
-                            self.subtitleLabel.transform = self.subtitleLabel.transform.translatedBy(x: 0, y: -UIScreen.main.bounds.height * 0.1)
+                            self.subtitleLabel.transform = self.subtitleLabel.transform.translatedBy(x: 0, y: Constants.transformHeight)
             }) { (_) in
                 completion(true)
             }

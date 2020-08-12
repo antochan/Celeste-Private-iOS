@@ -65,12 +65,12 @@ class MainView: UIView {
         return label
     }()
     
-    private let subtitleLabel: UILabel = {
+    let subtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.AppColors.white
-        label.text = "6 months"
-        label.font = .bellefair(size: 30)
-        label.numberOfLines = 1
+        label.font = .bellefair(size: 32) 
+        label.isUserInteractionEnabled = true
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
 
@@ -108,6 +108,10 @@ class MainView: UIView {
             userImageView.image = #imageLiteral(resourceName: "groot")
         }
     }
+    
+    func applyTime(dateString: String?) {
+        subtitleLabel.text = dateString ?? "Unknown time ago!"
+    }
 }
 
 //MARK: - Private
@@ -140,6 +144,7 @@ private extension MainView {
             
             titleStack.topAnchor.constraint(equalTo: userImageView.bottomAnchor, constant: Spacing.twentyFour),
             titleStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.twentyFour),
+            titleStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour),
             
             contentView.topAnchor.constraint(equalTo: bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),

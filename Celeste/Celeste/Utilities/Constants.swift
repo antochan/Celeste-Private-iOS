@@ -13,6 +13,10 @@ public enum Who {
     case antonio
 }
 
+public enum AppConstants {
+    static let relationshipStartDate = Date(timeIntervalSince1970: 1581796800)
+}
+
 public enum Spacing {
     public static let zero: CGFloat = 0
     public static let four: CGFloat = 4
