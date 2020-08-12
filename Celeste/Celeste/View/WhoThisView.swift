@@ -1,5 +1,5 @@
 //
-//  AuthView.swift
+//  WhoThisView.swift
 //  Celeste
 //
 //  Created by Antonio Chan on 2020/8/10.
@@ -19,8 +19,7 @@ class WhoThisView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.AppColors.black
         label.text = "Who Dis?"
         label.font = .bellefair(size: 35)
         label.alpha = 0
@@ -29,8 +28,7 @@ class WhoThisView: UIView {
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.AppColors.black
         label.text = "Hello and welcome to Celeste! The digital scratchbook just for us HEH! Choose below who is using the app right now, if you're name isn't there then... leave!"
         label.font = .bellefair(size: 18)
         label.numberOfLines = 0
@@ -127,7 +125,7 @@ class WhoThisView: UIView {
 
 private extension WhoThisView {
     func commonInit() {
-        backgroundColor = .white
+        backgroundColor = UIColor.AppColors.white
         configureSubviews()
         configureLayout()
     }

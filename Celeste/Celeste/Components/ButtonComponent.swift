@@ -183,8 +183,8 @@ private extension ButtonComponent {
     }
     
     func applyPrimary(hasTitle: Bool, hasImage: Bool) {
-        backgroundColor = .black
-        titleLabel?.textColor = .white
+        backgroundColor = UIColor.AppColors.black
+        titleLabel?.textColor = UIColor.AppColors.white
         apply(borderWidth: .none)
         setContentInsets(hasTitle: hasTitle,
                          hasImage: hasImage,

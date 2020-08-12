@@ -37,7 +37,7 @@ class UserComponent: UIView, Component, Pressable {
     
     private let usernameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor.AppColors.black
         label.font = .bellefair(size: 18)
         return label
     }()

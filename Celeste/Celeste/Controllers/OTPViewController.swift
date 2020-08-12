@@ -47,6 +47,7 @@ class OTPViewController: UIViewController {
     func configureActions() {
         otpView.backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         otpView.submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
+        otpView.OTPField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
     @objc func backTapped() {
@@ -58,13 +59,23 @@ class OTPViewController: UIViewController {
             if code.count < 4 {
                 otpView.OTPField.becomeFirstResponder()
             } else if code == "0215" {
-                otpView.handleDisappearAnimation { done in
+                otpView.handleDisappearAnimation { [weak self] done in
+                    guard let strongSelf = self else { return }
                     if done {
-                        print("move to new screen")
+                        strongSelf.transitionToMainScreen()
                     }
                 }
             } else {
                 otpView.errorLabel.isHidden = false
+        }
+    }
+    
+    func transitionToMainScreen() {
+        let mainViewController = MainViewController(who: who)
+        mainViewController.isHeroEnabled = true
+        mainViewController.modalPresentationStyle = .fullScreen
+        present(mainViewController, animated: true) {
+            mainViewController.presented = true
         }
     }
 }
@@ -74,5 +85,16 @@ class OTPViewController: UIViewController {
 extension OTPViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         otpView.errorLabel.isHidden = true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 4
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
     }
 }

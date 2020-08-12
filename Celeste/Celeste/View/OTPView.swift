@@ -27,7 +27,7 @@ class OTPView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor.AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .bellefair(size: 35)
         label.alpha = 0
@@ -36,7 +36,7 @@ class OTPView: UIView {
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor.AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .bellefair(size: 18)
         label.numberOfLines = 0
@@ -47,7 +47,7 @@ class OTPView: UIView {
     let OTPField: OTPTextField = {
         let field = OTPTextField()
         field.translatesAutoresizingMaskIntoConstraints = false
-        field.placeholderColor = .black
+        field.placeholderColor = UIColor.AppColors.black
         field.spacing = Spacing.sixteen
         field.font = UIFont.bellefair(size: 28)
         field.alpha = 0
@@ -84,11 +84,12 @@ class OTPView: UIView {
     
     func appearAnimation() {
         titleLabel.transform = .identity
-        titleLabel.fadeIn(duration: 0.2, delay: 0.1)
+        titleLabel.fadeIn(duration: 0.3, delay: 0.2)
         subtitleLabel.transform = .identity
-        subtitleLabel.fadeIn(duration: 0.2, delay: 0.1)
-        OTPField.fadeIn(duration: 0.2, delay: 0.1)
-        submitButton.fadeIn(duration: 0.2, delay: 0.1)
+        subtitleLabel.fadeIn(duration: 0.3, delay: 0.2)
+        OTPField.fadeIn(duration: 0.3, delay: 0.2)
+        submitButton.fadeIn(duration: 0.3, delay: 0.2)
+        backButton.fadeIn(duration: 0.3, delay: 0.2)
     }
     
     func handleDisappearAnimation(completion: @escaping (Bool) -> ()) {
@@ -131,6 +132,7 @@ class OTPView: UIView {
                             self.subtitleLabel.alpha = 0
                             self.submitButton.alpha = 0
                             self.subtitleLabel.transform = self.subtitleLabel.transform.translatedBy(x: 0, y: -UIScreen.main.bounds.height * 0.1)
+                            self.backButton.alpha = 0
             }) { (_) in
                 completion(true)
             }
@@ -155,7 +157,7 @@ class OTPView: UIView {
 
 private extension OTPView {
     func commonInit() {
-        backgroundColor = .white
+        backgroundColor = UIColor.AppColors.white
         configureSubviews()
         configureLayout()
     }

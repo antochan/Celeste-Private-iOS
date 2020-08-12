@@ -1,5 +1,5 @@
 //
-//  AuthViewController.swift
+//  WhoThisViewController.swift
 //  Celeste
 //
 //  Created by Antonio Chan on 2020/8/10.
