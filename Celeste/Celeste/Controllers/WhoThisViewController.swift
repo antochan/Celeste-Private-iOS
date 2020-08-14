@@ -12,6 +12,12 @@ import Hero
 class WhoThisViewController: UIViewController {
     let whoThisView = WhoThisView()
     
+    var presented: Bool = false {
+        didSet {
+            whoThisView.appearAnimation()
+        }
+    }
+    
     override func loadView() {
         super.loadView()
         view = whoThisView

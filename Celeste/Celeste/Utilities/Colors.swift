@@ -44,5 +44,6 @@ extension UIColor {
         static let purple = UIColor(hexString: "#E4DDF0")
         static let beige = UIColor(hexString: "#F5F3F1")
         static let white = UIColor(hexString: "#FFFFFF")
+        static let offWhite = UIColor(hexString: "#F9FBF5")
     }
 }

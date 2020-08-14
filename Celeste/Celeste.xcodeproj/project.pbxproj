@@ -36,6 +36,9 @@
 		8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4A24E3C0E000582C74 /* Colors.swift */; };
 		8ADE68E124E6709D00C4E3EE /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */; };
 		8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */; };
+		8ADE68E524E6787E00C4E3EE /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */; };
+		8ADE68E924E67B1100C4E3EE /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E824E67B1100C4E3EE /* LaunchScreenViewController.swift */; };
+		8ADE68EF24E67F0900C4E3EE /* CELESTE.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8ADE68EE24E67F0900C4E3EE /* CELESTE.gif */; };
 		B348A284F0F4A8D3E2F9CCC2 /* Pods_Celeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05ACA63F346BAF7357D43597 /* Pods_Celeste.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,9 @@
 		8AB59B4A24E3C0E000582C74 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
 		8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageButton.swift; sourceTree = "<group>"; };
+		8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		8ADE68E824E67B1100C4E3EE /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		8ADE68EE24E67F0900C4E3EE /* CELESTE.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CELESTE.gif; sourceTree = "<group>"; };
 		9C4F86D7151F380A1B101756 /* Pods-Celeste-CelesteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C91523BF7B46078610023ED9 /* Pods-CelesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelesteTests.debug.xcconfig"; path = "Target Support Files/Pods-CelesteTests/Pods-CelesteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA83AB9E7E9B216B007235BE /* Pods-Celeste-CelesteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.release.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				8A106D6F24E2471400BE8D34 /* WhoThisViewController.swift */,
 				8AB59B4424E2719900582C74 /* OTPViewController.swift */,
 				8AB59B4824E3BEF600582C74 /* MainViewController.swift */,
+				8ADE68E824E67B1100C4E3EE /* LaunchScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				8A106D7224E2474500BE8D34 /* WhoThisView.swift */,
 				8AB59B4224E2718D00582C74 /* OTPView.swift */,
 				8AB59B4624E3BEEC00582C74 /* MainView.swift */,
+				8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 		8A106D7424E24A2500BE8D34 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8ADE68EE24E67F0900C4E3EE /* CELESTE.gif */,
 				8A106D7724E24A4700BE8D34 /* Bellefair-Regular.ttf */,
 				8A106D7524E24A3000BE8D34 /* Fonts.swift */,
 				8A7FD84924E24F6F0057F3C5 /* Extensions.swift */,
@@ -376,6 +385,7 @@
 			files = (
 				8A106D7824E24A4800BE8D34 /* Bellefair-Regular.ttf in Resources */,
 				8A106D4B24E2446100BE8D34 /* LaunchScreen.storyboard in Resources */,
+				8ADE68EF24E67F0900C4E3EE /* CELESTE.gif in Resources */,
 				8A106D4824E2446100BE8D34 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,8 +521,10 @@
 				8A7FD85724E257D90057F3C5 /* PressHighlightable.swift in Sources */,
 				8A106D3F24E2445F00BE8D34 /* AppDelegate.swift in Sources */,
 				8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */,
+				8ADE68E524E6787E00C4E3EE /* LaunchScreenView.swift in Sources */,
 				8AB59B4924E3BEF600582C74 /* MainViewController.swift in Sources */,
 				8A7FD85A24E257D90057F3C5 /* Pressable.swift in Sources */,
+				8ADE68E924E67B1100C4E3EE /* LaunchScreenViewController.swift in Sources */,
 				8A7FD84A24E24F6F0057F3C5 /* Extensions.swift in Sources */,
 				8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */,
 				8A7FD85924E257D90057F3C5 /* PressScalable.swift in Sources */,

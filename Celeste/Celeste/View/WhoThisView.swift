@@ -10,8 +10,8 @@ import UIKit
 
 class WhoThisView: UIView {
     private enum Constants {
-        static let animateInDuration: TimeInterval = 0.2
-        static let animateInDelay: TimeInterval = 0.1
+        static let animateInDuration: TimeInterval = 0.3
+        static let animateInDelay: TimeInterval = 0.2
         static let disappearDuration: TimeInterval = 0.4
         static let transformHeight = -UIScreen.main.bounds.height * 0.1
     }
@@ -48,6 +48,7 @@ class WhoThisView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
+        stackView.alpha = 0
         stackView.spacing = Spacing.twentyFour
         return stackView
     }()
