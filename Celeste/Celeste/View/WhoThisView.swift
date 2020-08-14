@@ -46,7 +46,8 @@ class WhoThisView: UIView {
     private let userStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
+        stackView.distribution = .fillProportionally
         stackView.spacing = Spacing.twentyFour
         return stackView
     }()

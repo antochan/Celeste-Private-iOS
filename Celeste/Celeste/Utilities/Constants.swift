@@ -15,6 +15,8 @@ public enum Who {
 
 public enum AppConstants {
     static let relationshipStartDate = Date(timeIntervalSince1970: 1581796800)
+    static let laurenImage: UIImage = #imageLiteral(resourceName: "LaurenAnimoji")
+    static let antoImage: UIImage = #imageLiteral(resourceName: "AntoAnimoji")
 }
 
 public enum Spacing {

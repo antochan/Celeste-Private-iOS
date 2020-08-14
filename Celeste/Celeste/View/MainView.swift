@@ -103,9 +103,9 @@ class MainView: UIView {
     func applyMainView(who: Who) {
         switch who {
         case .lauren:
-            userImageView.image = #imageLiteral(resourceName: "ebichu")
+            userImageView.image = AppConstants.laurenImage
         case .antonio:
-            userImageView.image = #imageLiteral(resourceName: "groot")
+            userImageView.image = AppConstants.antoImage
         }
     }
     

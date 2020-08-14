@@ -19,17 +19,20 @@ class UserComponent: UIView, Component, Pressable {
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = Spacing.twelve
+        stackView.spacing = Spacing.eight
         return stackView
+    }()
+    
+    private let imageBackgroundView: UserImageComponent = {
+        let component = UserImageComponent()
+        return component
     }()
     
     private let userImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        imageView.layer.cornerRadius = 20
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -38,7 +41,7 @@ class UserComponent: UIView, Component, Pressable {
     private let usernameLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
-        label.font = .bellefair(size: 18)
+        label.font = .bellefair(size: 20)
         return label
     }()
     
@@ -52,13 +55,12 @@ class UserComponent: UIView, Component, Pressable {
     }
     
     func apply(viewModel: ViewModel) {
+        imageBackgroundView.apply(viewModel: UserImageComponent.ViewModel(who: viewModel.who, dimension: 88.0))
         switch viewModel.who {
         case .lauren:
-            userImageView.image = #imageLiteral(resourceName: "ebichu")
-            usernameLabel.text = "Lauren Ting-An Chen"
+            usernameLabel.text = "Lauren"
         case .antonio:
-            userImageView.image = #imageLiteral(resourceName: "groot")
-            usernameLabel.text = "Antonio \"Honey\" Chan"
+            usernameLabel.text = "Antonio"
         }
     }
     
@@ -86,22 +88,29 @@ class UserComponent: UIView, Component, Pressable {
 
 private extension UserComponent {
     func commonInit() {
+        layer.cornerRadius = Spacing.eight
         configureSubviews()
         configureLayout()
     }
     
     func configureSubviews() {
         addSubview(stackView)
-        stackView.addArrangedSubviews(userImageView, usernameLabel)
+        stackView.addArrangedSubviews(imageBackgroundView, usernameLabel)
+        imageBackgroundView.addSubview(userImageView)
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(componentTapped)))
     }
     
     func configureLayout() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: Spacing.eight),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.eight),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.eight),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Spacing.eight),
+            
+            userImageView.topAnchor.constraint(equalTo: imageBackgroundView.topAnchor),
+            userImageView.trailingAnchor.constraint(equalTo: imageBackgroundView.trailingAnchor, constant: -Spacing.four),
+            userImageView.leadingAnchor.constraint(equalTo: imageBackgroundView.leadingAnchor, constant: Spacing.four),
+            userImageView.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: -Spacing.eight)
         ])
     }
 }
@@ -112,5 +121,78 @@ extension UserComponent: Actionable {
     
     public enum Action {
         case componentTapped
+    }
+}
+
+//MARK: - UserImageComponent
+
+class UserImageComponent: UIView, Component {
+    struct ViewModel {
+        let who: Who
+        let dimension: CGFloat
+    }
+    
+    private let imageBackgroundView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    
+    private let userImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func apply(viewModel: ViewModel) {
+        switch viewModel.who {
+        case .lauren:
+            userImageView.image = AppConstants.laurenImage
+            imageBackgroundView.backgroundColor = UIColor.AppColors.purple
+        case .antonio:
+            imageBackgroundView.backgroundColor = UIColor.AppColors.beige
+            userImageView.image = AppConstants.antoImage
+        }
+        
+        imageBackgroundView.heightAnchor.constraint(equalToConstant: viewModel.dimension).isActive = true
+        imageBackgroundView.widthAnchor.constraint(equalToConstant: viewModel.dimension).isActive = true
+        imageBackgroundView.layer.cornerRadius = viewModel.dimension / 2
+    }
+    
+    func commonInit() {
+        configureSubviews()
+        configureLayout()
+    }
+    
+    func configureSubviews() {
+        addSubview(imageBackgroundView)
+        imageBackgroundView.addSubview(userImageView)
+    }
+    
+    func configureLayout() {
+        NSLayoutConstraint.activate([
+            imageBackgroundView.topAnchor.constraint(equalTo: topAnchor),
+            imageBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            userImageView.topAnchor.constraint(equalTo: imageBackgroundView.topAnchor),
+            userImageView.trailingAnchor.constraint(equalTo: imageBackgroundView.trailingAnchor, constant: -Spacing.four),
+            userImageView.leadingAnchor.constraint(equalTo: imageBackgroundView.leadingAnchor, constant: Spacing.four),
+            userImageView.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: -Spacing.eight)
+        ])
     }
 }

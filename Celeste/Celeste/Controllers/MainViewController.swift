@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     let mainView = MainView()
     private let who: Who
     private var timer = Timer()
-    private var dateDiffType: DateDiffType = .minutes {
+    private var dateDiffType: DateDiffType = .days {
         didSet {
             mainView.applyTime(dateString: calculateLengthDate(diffType: dateDiffType))
         }
@@ -111,7 +111,7 @@ class MainViewController: UIViewController {
             let hour = difference.hour
             let minute = difference.minute
             let seconds = difference.second
-            return "\(hour ?? 0)Hr \(minute ?? 0)min \(seconds ?? 0)sec"
+            return "\(hour ?? 0) : \(minute ?? 0) : \(seconds ?? 0)"
         }
     }
 }
