@@ -34,6 +34,8 @@
 		8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4624E3BEEC00582C74 /* MainView.swift */; };
 		8AB59B4924E3BEF600582C74 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4824E3BEF600582C74 /* MainViewController.swift */; };
 		8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4A24E3C0E000582C74 /* Colors.swift */; };
+		8ADE68E124E6709D00C4E3EE /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */; };
+		8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */; };
 		B348A284F0F4A8D3E2F9CCC2 /* Pods_Celeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05ACA63F346BAF7357D43597 /* Pods_Celeste.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		8AB59B4624E3BEEC00582C74 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8AB59B4824E3BEF600582C74 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8AB59B4A24E3C0E000582C74 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageButton.swift; sourceTree = "<group>"; };
 		9C4F86D7151F380A1B101756 /* Pods-Celeste-CelesteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C91523BF7B46078610023ED9 /* Pods-CelesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelesteTests.debug.xcconfig"; path = "Target Support Files/Pods-CelesteTests/Pods-CelesteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA83AB9E7E9B216B007235BE /* Pods-Celeste-CelesteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.release.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 				8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */,
 				8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */,
 				8A7FD84E24E2575C0057F3C5 /* UserComponent.swift */,
+				8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */,
+				8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 				8A7FD86024E258040057F3C5 /* ButtonComponent.swift in Sources */,
 				8A7FD85724E257D90057F3C5 /* PressHighlightable.swift in Sources */,
 				8A106D3F24E2445F00BE8D34 /* AppDelegate.swift in Sources */,
+				8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */,
 				8AB59B4924E3BEF600582C74 /* MainViewController.swift in Sources */,
 				8A7FD85A24E257D90057F3C5 /* Pressable.swift in Sources */,
 				8A7FD84A24E24F6F0057F3C5 /* Extensions.swift in Sources */,
@@ -518,6 +525,7 @@
 				8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */,
 				8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */,
 				8A106D4124E2445F00BE8D34 /* SceneDelegate.swift in Sources */,
+				8ADE68E124E6709D00C4E3EE /* RoundedShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

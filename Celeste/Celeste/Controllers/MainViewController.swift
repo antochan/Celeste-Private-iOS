@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     private var timer = Timer()
     private var dateDiffType: DateDiffType = .days {
         didSet {
-            mainView.applyTime(dateString: calculateLengthDate(diffType: dateDiffType))
+            mainView.applyTime(dateString: calculateLengthDate(diffType: dateDiffType), animate: true)
         }
     }
     var presented: Bool = false {
@@ -46,10 +46,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setNeedsStatusBarAppearanceUpdate()
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+        mainView.applyTime(dateString: calculateLengthDate(diffType: dateDiffType), animate: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,7 +57,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.applyMainView(who: who)
-        mainView.applyTime(dateString: calculateLengthDate(diffType: dateDiffType))
         configureActions()
         
     }
@@ -77,7 +73,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func updateTimeLabel() {
-        mainView.applyTime(dateString: calculateLengthDate(diffType: dateDiffType))
+        mainView.applyTime(dateString: calculateLengthDate(diffType: dateDiffType), animate: false)
     }
     
     func determineDiffType(index: Int) -> DateDiffType {
@@ -111,7 +107,7 @@ class MainViewController: UIViewController {
             let hour = difference.hour
             let minute = difference.minute
             let seconds = difference.second
-            return "\(hour ?? 0) : \(minute ?? 0) : \(seconds ?? 0)"
+            return "\(hour ?? 0)h \(minute ?? 0)m \(seconds ?? 0)s"
         }
     }
 }

@@ -9,49 +9,18 @@
 import UIKit
 
 class MainView: UIView {
-    private let backgroundView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.AppColors.black
-        view.alpha = 0
-        return view
-    }()
-    
-    private let contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.AppColors.white
-        view.layer.cornerRadius = Spacing.fortyEight
-        view.clipsToBounds = true
-        return view
-    }()
-    
-    private let userImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.alpha = 0
-        imageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        imageView.layer.cornerRadius = 25
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    let calendarButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.alpha = 0
-        button.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 22).isActive = true
-        button.setImage(#imageLiteral(resourceName: "calendar"), for: .normal)
-        return button
+    private let userImage: UserImageComponent = {
+        let image = UserImageComponent()
+        image.alpha = 0
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
     }()
     
     private let titleStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
+        stackView.alignment = .center
         stackView.spacing = Spacing.four
         stackView.alpha = 0
         return stackView
@@ -59,21 +28,30 @@ class MainView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.AppColors.lightBlue
-        label.text = "Total Time Together"
+        label.textColor = UIColor.AppColors.black
+        label.text = "You've been trapped for..."
         label.font = .bellefair(size: 16)
+        label.textAlignment = .center
         return label
     }()
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.AppColors.white
-        label.font = .bellefair(size: 32) 
+        label.textColor = UIColor.AppColors.black
+        label.font = .bellefair(size: 42)
+        label.textAlignment = .center
         label.isUserInteractionEnabled = true
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
-
+    
+    let roundedButton: CircularImageButton = {
+        let view = CircularImageButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "next"), dimensions: 48))
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -84,32 +62,32 @@ class MainView: UIView {
     }
     
     func appearAnimation() {
-        backgroundView.fadeIn(duration: 0.3, delay: 0.2)
-        userImageView.fadeIn(duration: 0.3, delay: 0.2)
-        calendarButton.fadeIn(duration: 0.3, delay: 0.2)
-        titleStack.fadeIn(duration: 0.3, delay: 0.2)
         UIView.animate(withDuration: 0.6,
-                       delay: 0.3,
-                       usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 0.4,
-                       options: .curveEaseOut,
+                       delay: 0.2,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.3,
+                       options: .curveEaseIn,
                        animations: {
-                        self.contentView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height * 0.725)
-        }) { (_) in
-            print("content view appeared")
-        }
+                        self.userImage.alpha = 1
+                        self.userImage.transform = CGAffineTransform(translationX: 0, y: 75)
+        })
+        
+        titleStack.fadeIn(duration: 0.6, delay: 0.8)
     }
     
     func applyMainView(who: Who) {
         switch who {
         case .lauren:
-            userImageView.image = AppConstants.laurenImage
+            userImage.apply(viewModel: UserImageComponent.ViewModel(who: .lauren, dimension: 150))
         case .antonio:
-            userImageView.image = AppConstants.antoImage
+            userImage.apply(viewModel: UserImageComponent.ViewModel(who: .antonio, dimension: 150))
         }
     }
     
-    func applyTime(dateString: String?) {
+    func applyTime(dateString: String?, animate: Bool) {
+        if animate {
+            subtitleLabel.fadeTransition(0.2)
+        }
         subtitleLabel.text = dateString ?? "Unknown time ago!"
     }
 }
@@ -124,32 +102,21 @@ private extension MainView {
     }
     
     func configureSubviews() {
-        addSubviews(backgroundView)
-        backgroundView.addSubviews(calendarButton, titleStack, userImageView, contentView)
+        addSubviews(userImage, titleStack, roundedButton)
         titleStack.addArrangedSubviews(titleLabel, subtitleLabel)
     }
     
     func configureLayout() {
         NSLayoutConstraint.activate([
-            backgroundView.topAnchor.constraint(equalTo: topAnchor),
-            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            userImage.centerXAnchor.constraint(equalTo: centerXAnchor),
+            userImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -150),
             
-            userImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Spacing.sixteen),
-            userImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour),
-            
-            calendarButton.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor),
-            calendarButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.twentyFour),
-            
-            titleStack.topAnchor.constraint(equalTo: userImageView.bottomAnchor, constant: Spacing.twentyFour),
+            titleStack.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: Spacing.thirtyTwo + 75),
             titleStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.twentyFour),
             titleStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour),
             
-            contentView.topAnchor.constraint(equalTo: bottomAnchor),
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height)
+            roundedButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            roundedButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Spacing.thirtyTwo)
         ])
     }
 }
