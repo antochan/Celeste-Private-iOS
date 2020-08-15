@@ -45,10 +45,27 @@ class MainView: UIView {
         return label
     }()
     
-    let roundedButton: CircularImageButton = {
+    let lockButton: CircularImageButton = {
         let view = CircularImageButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "next"), dimensions: 48))
+        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "lock"), dimensions: 42))
+        view.alpha = 0
+        return view
+    }()
+    
+    let refreshButton: CircularImageButton = {
+        let view = CircularImageButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "refresh"), dimensions: 42))
+        view.alpha = 0
+        return view
+    }()
+    
+    let nextButton: CircularImageButton = {
+        let view = CircularImageButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "next"), dimensions: 50))
+        view.alpha = 0
         return view
     }()
     
@@ -62,6 +79,9 @@ class MainView: UIView {
     }
     
     func appearAnimation() {
+        lockButton.fadeIn(duration: 0.3, delay: 0)
+        refreshButton.fadeIn(duration: 0.3, delay: 0)
+        nextButton.fadeIn(duration: 0.5, delay: 0)
         UIView.animate(withDuration: 0.6,
                        delay: 0.2,
                        usingSpringWithDamping: 0.5,
@@ -71,8 +91,20 @@ class MainView: UIView {
                         self.userImage.alpha = 1
                         self.userImage.transform = CGAffineTransform(translationX: 0, y: 75)
         })
-        
         titleStack.fadeIn(duration: 0.6, delay: 0.8)
+    }
+    
+    func handleDisappearAnimation(completion: @escaping (Bool) -> ()) {
+        self.titleStack.fadeOut(duration: 0.6, delay: 0)
+        self.lockButton.fadeOut(duration: 0.3, delay: 0.3)
+        self.refreshButton.fadeOut(duration: 0.3, delay: 0.3)
+        self.nextButton.fadeOut(duration: 0.3, delay: 0.3)
+//        UIView.animate(withDuration: 0.3, delay: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
+//            self.userImage.transform = CGAffineTransform(translationX: 0, y: -75)
+//            self.userImage.alpha = 0
+//        }, completion: { finished in
+//            completion(true)
+//        })
     }
     
     func applyMainView(who: Who) {
@@ -102,7 +134,7 @@ private extension MainView {
     }
     
     func configureSubviews() {
-        addSubviews(userImage, titleStack, roundedButton)
+        addSubviews(userImage, titleStack, nextButton, lockButton, refreshButton)
         titleStack.addArrangedSubviews(titleLabel, subtitleLabel)
     }
     
@@ -115,8 +147,14 @@ private extension MainView {
             titleStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.twentyFour),
             titleStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour),
             
-            roundedButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            roundedButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Spacing.thirtyTwo)
+            nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Spacing.thirtyTwo),
+            
+            lockButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Spacing.sixteen),
+            lockButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.twentyFour),
+            
+            refreshButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Spacing.sixteen),
+            refreshButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour),
         ])
     }
 }

@@ -38,7 +38,7 @@
 		8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */; };
 		8ADE68E524E6787E00C4E3EE /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */; };
 		8ADE68E924E67B1100C4E3EE /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E824E67B1100C4E3EE /* LaunchScreenViewController.swift */; };
-		8ADE68EF24E67F0900C4E3EE /* CELESTE.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8ADE68EE24E67F0900C4E3EE /* CELESTE.gif */; };
+		8ADE68F324E6840200C4E3EE /* CELESTE.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8ADE68F224E6840200C4E3EE /* CELESTE.gif */; };
 		B348A284F0F4A8D3E2F9CCC2 /* Pods_Celeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05ACA63F346BAF7357D43597 /* Pods_Celeste.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,7 +101,7 @@
 		8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageButton.swift; sourceTree = "<group>"; };
 		8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		8ADE68E824E67B1100C4E3EE /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
-		8ADE68EE24E67F0900C4E3EE /* CELESTE.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CELESTE.gif; sourceTree = "<group>"; };
+		8ADE68F224E6840200C4E3EE /* CELESTE.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CELESTE.gif; sourceTree = "<group>"; };
 		9C4F86D7151F380A1B101756 /* Pods-Celeste-CelesteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C91523BF7B46078610023ED9 /* Pods-CelesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelesteTests.debug.xcconfig"; path = "Target Support Files/Pods-CelesteTests/Pods-CelesteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA83AB9E7E9B216B007235BE /* Pods-Celeste-CelesteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celeste-CelesteUITests.release.xcconfig"; path = "Target Support Files/Pods-Celeste-CelesteUITests/Pods-Celeste-CelesteUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		8A106D7424E24A2500BE8D34 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8ADE68EE24E67F0900C4E3EE /* CELESTE.gif */,
+				8ADE68F224E6840200C4E3EE /* CELESTE.gif */,
 				8A106D7724E24A4700BE8D34 /* Bellefair-Regular.ttf */,
 				8A106D7524E24A3000BE8D34 /* Fonts.swift */,
 				8A7FD84924E24F6F0057F3C5 /* Extensions.swift */,
@@ -384,8 +384,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A106D7824E24A4800BE8D34 /* Bellefair-Regular.ttf in Resources */,
+				8ADE68F324E6840200C4E3EE /* CELESTE.gif in Resources */,
 				8A106D4B24E2446100BE8D34 /* LaunchScreen.storyboard in Resources */,
-				8ADE68EF24E67F0900C4E3EE /* CELESTE.gif in Resources */,
 				8A106D4824E2446100BE8D34 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

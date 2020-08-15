@@ -12,6 +12,7 @@ import SwiftyGif
 class LaunchScreenView: UIView {
     let gifImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
         try! imageView.setGifImage(UIImage(gifName: "CELESTE"), loopCount: 1)
         return imageView
@@ -28,7 +29,7 @@ class LaunchScreenView: UIView {
     }
 
     private func commonInit() {
-        backgroundColor = UIColor.AppColors.offWhite
+        backgroundColor = UIColor.AppColors.white
         addSubview(gifImageView)
         
         NSLayoutConstraint.activate([

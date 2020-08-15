@@ -36,7 +36,7 @@ class WhoThisView: UIView {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
-        label.text = "Hello and welcome to Celeste! The digital scratchbook just for us HEH! Choose below who is using the app right now, if you're name isn't there then... leave!"
+        label.text = "Hello and welcome to Celeste! The digital scratchbook just for us HEH! Choose below who is using the app right now, if your name isn't there then... leave!"
         label.font = .bellefair(size: 18)
         label.numberOfLines = 0
         label.alpha = 0

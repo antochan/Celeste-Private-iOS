@@ -74,8 +74,8 @@ private extension CircularImageButton {
             circleView.trailingAnchor.constraint(equalTo: trailingAnchor),
             circleView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            imageView.topAnchor.constraint(equalTo: circleView.topAnchor, constant: Spacing.sixteen),
-            imageView.bottomAnchor.constraint(equalTo: circleView.bottomAnchor, constant: -Spacing.sixteen),
+            imageView.topAnchor.constraint(equalTo: circleView.topAnchor, constant: Spacing.twelve),
+            imageView.bottomAnchor.constraint(equalTo: circleView.bottomAnchor, constant: -Spacing.twelve),
             imageView.leadingAnchor.constraint(equalTo: circleView.leadingAnchor, constant: Spacing.twelve),
             imageView.trailingAnchor.constraint(equalTo: circleView.trailingAnchor, constant: -Spacing.twelve)
         ])

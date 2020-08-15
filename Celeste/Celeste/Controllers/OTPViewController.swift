@@ -62,6 +62,7 @@ class OTPViewController: UIViewController {
                 otpView.handleDisappearAnimation { [weak self] done in
                     guard let strongSelf = self else { return }
                     if done {
+                        strongSelf.otpView.OTPField.text = nil
                         strongSelf.transitionToMainScreen()
                     }
                 }

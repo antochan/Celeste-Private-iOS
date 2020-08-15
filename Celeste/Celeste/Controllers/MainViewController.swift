@@ -66,6 +66,25 @@ class MainViewController: UIViewController {
         mainView.subtitleLabel.addGestureRecognizer(tap)
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimeLabel), userInfo: nil, repeats: true)
+        
+        mainView.refreshButton.actions = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.timeDateTapped()
+        }
+        
+        mainView.lockButton.actions = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.dismiss(animated: true)
+        }
+        
+        mainView.nextButton.actions = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.mainView.handleDisappearAnimation { done in
+                if done {
+                    strongSelf.presentHomePage(who: strongSelf.who)
+                }
+            }
+        }
     }
     
     @objc func timeDateTapped() {
@@ -109,5 +128,9 @@ class MainViewController: UIViewController {
             let seconds = difference.second
             return "\(hour ?? 0)h \(minute ?? 0)m \(seconds ?? 0)s"
         }
+    }
+    
+    func presentHomePage(who: Who) {
+        print("Home")
     }
 }

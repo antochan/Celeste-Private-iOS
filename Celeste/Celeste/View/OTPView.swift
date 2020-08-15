@@ -147,8 +147,8 @@ class OTPView: UIView {
             errorLabel.text = "Wrong code! if you're Lauren, its okay honey try again! Think when did we start dating? If not, who the fuck are you go away!"
         case .antonio:
             titleLabel.text = "Suh Dude.."
-            subtitleLabel.text = "psh, just enter the damn passcode you idiot."
-            errorLabel.text = "You set the fucking code you idiot!"
+            subtitleLabel.text = "psh, just enter the damn passcode you DUMDUM."
+            errorLabel.text = "You set the fucking code you DODOHEAD!"
         }
     }
 }
