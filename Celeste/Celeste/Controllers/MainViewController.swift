@@ -131,6 +131,11 @@ class MainViewController: UIViewController {
     }
     
     func presentHomePage(who: Who) {
-        print("Home")
+        let homeViewController = HomeViewController(who: who)
+        homeViewController.modalPresentationStyle = .fullScreen
+        homeViewController.isHeroEnabled = true
+        present(homeViewController, animated: true) {
+            homeViewController.presented = true
+        }
     }
 }

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Hero
 
 class MainView: UIView {
     private let userImage: UserImageComponent = {
         let image = UserImageComponent()
         image.alpha = 0
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.hero.id = HeroConstants.userImage
         return image
     }()
     
@@ -91,20 +93,19 @@ class MainView: UIView {
                         self.userImage.alpha = 1
                         self.userImage.transform = CGAffineTransform(translationX: 0, y: 75)
         })
-        titleStack.fadeIn(duration: 0.6, delay: 0.8)
+        titleStack.fadeIn(duration: 0.4, delay: 0.8)
     }
     
     func handleDisappearAnimation(completion: @escaping (Bool) -> ()) {
-        self.titleStack.fadeOut(duration: 0.6, delay: 0)
         self.lockButton.fadeOut(duration: 0.3, delay: 0.3)
         self.refreshButton.fadeOut(duration: 0.3, delay: 0.3)
         self.nextButton.fadeOut(duration: 0.3, delay: 0.3)
-//        UIView.animate(withDuration: 0.3, delay: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
-//            self.userImage.transform = CGAffineTransform(translationX: 0, y: -75)
-//            self.userImage.alpha = 0
-//        }, completion: { finished in
-//            completion(true)
-//        })
+        
+        UIView.animate(withDuration: 0.6, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.titleStack.alpha = 0
+        }, completion: { finished in
+            completion(true)
+        })
     }
     
     func applyMainView(who: Who) {

@@ -16,7 +16,6 @@ class RoundedShadowView: UIView, Pressable {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         layoutView()
     }
     

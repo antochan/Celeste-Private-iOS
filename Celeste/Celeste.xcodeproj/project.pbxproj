@@ -29,6 +29,9 @@
 		8A7FD85E24E258040057F3C5 /* ComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */; };
 		8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */; };
 		8A7FD86024E258040057F3C5 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */; };
+		8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A024E785E900442B80 /* HomeViewController.swift */; };
+		8A9A92A324E785F600442B80 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A224E785F600442B80 /* HomeView.swift */; };
+		8A9A92A524E8792900442B80 /* HomeSectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */; };
 		8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4224E2718D00582C74 /* OTPView.swift */; };
 		8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4424E2719900582C74 /* OTPViewController.swift */; };
 		8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4624E3BEEC00582C74 /* MainView.swift */; };
@@ -92,6 +95,9 @@
 		8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTableViewCell.swift; sourceTree = "<group>"; };
 		8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		8A9A92A024E785E900442B80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8A9A92A224E785F600442B80 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionComponent.swift; sourceTree = "<group>"; };
 		8AB59B4224E2718D00582C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		8AB59B4424E2719900582C74 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		8AB59B4624E3BEEC00582C74 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -217,10 +223,11 @@
 		8A106D6E24E2470400BE8D34 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8ADE68E824E67B1100C4E3EE /* LaunchScreenViewController.swift */,
 				8A106D6F24E2471400BE8D34 /* WhoThisViewController.swift */,
 				8AB59B4424E2719900582C74 /* OTPViewController.swift */,
 				8AB59B4824E3BEF600582C74 /* MainViewController.swift */,
-				8ADE68E824E67B1100C4E3EE /* LaunchScreenViewController.swift */,
+				8A9A92A024E785E900442B80 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,10 +235,11 @@
 		8A106D7124E2473400BE8D34 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */,
 				8A106D7224E2474500BE8D34 /* WhoThisView.swift */,
 				8AB59B4224E2718D00582C74 /* OTPView.swift */,
 				8AB59B4624E3BEEC00582C74 /* MainView.swift */,
-				8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */,
+				8A9A92A224E785F600442B80 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 				8A7FD84E24E2575C0057F3C5 /* UserComponent.swift */,
 				8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */,
 				8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */,
+				8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -514,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */,
 				8A7FD84F24E2575C0057F3C5 /* UserComponent.swift in Sources */,
 				8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */,
 				8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */,
@@ -526,8 +536,10 @@
 				8A7FD85A24E257D90057F3C5 /* Pressable.swift in Sources */,
 				8ADE68E924E67B1100C4E3EE /* LaunchScreenViewController.swift in Sources */,
 				8A7FD84A24E24F6F0057F3C5 /* Extensions.swift in Sources */,
+				8A9A92A524E8792900442B80 /* HomeSectionComponent.swift in Sources */,
 				8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */,
 				8A7FD85924E257D90057F3C5 /* PressScalable.swift in Sources */,
+				8A9A92A324E785F600442B80 /* HomeView.swift in Sources */,
 				8A106D7624E24A3000BE8D34 /* Fonts.swift in Sources */,
 				8A106D7024E2471400BE8D34 /* WhoThisViewController.swift in Sources */,
 				8A7FD84C24E250C90057F3C5 /* Constants.swift in Sources */,

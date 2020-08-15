@@ -13,6 +13,10 @@ public enum Who {
     case antonio
 }
 
+public enum HeroConstants {
+    static let userImage = "UserImage"
+}
+
 public enum AppConstants {
     static let relationshipStartDate = Date(timeIntervalSince1970: 1581796800)
     static let laurenImage: UIImage = #imageLiteral(resourceName: "LaurenAnimoji")
