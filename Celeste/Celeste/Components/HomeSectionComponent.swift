@@ -15,6 +15,7 @@ public enum HomeSectionStyle {
 
 class HomeSectionComponent: UIView, Component, Pressable {
     public let configuration = PressableConfiguration(pressScale: .medium)
+    public var actions: Actions?
     
     struct ViewModel {
         let backgroundColor: UIColor
@@ -94,6 +95,9 @@ private extension HomeSectionComponent {
         layer.cornerRadius = 22
         configureSubviews()
         configureLayout()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        addGestureRecognizer(tap)
     }
     
     func configureSubviews() {
@@ -114,5 +118,18 @@ private extension HomeSectionComponent {
             imageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -Spacing.four),
             imageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Spacing.eight)
         ])
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        actions?(.componentTapped)
+    }
+}
+
+//MARK: - Actionable
+extension HomeSectionComponent: Actionable {
+    public typealias Actions = (Action) -> Void
+    
+    public enum Action {
+        case componentTapped
     }
 }

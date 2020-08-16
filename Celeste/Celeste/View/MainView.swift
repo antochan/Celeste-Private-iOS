@@ -97,9 +97,9 @@ class MainView: UIView {
     }
     
     func handleDisappearAnimation(completion: @escaping (Bool) -> ()) {
-        self.lockButton.fadeOut(duration: 0.3, delay: 0.3)
-        self.refreshButton.fadeOut(duration: 0.3, delay: 0.3)
-        self.nextButton.fadeOut(duration: 0.3, delay: 0.3)
+        lockButton.fadeOut(duration: 0.3, delay: 0.3)
+        refreshButton.fadeOut(duration: 0.3, delay: 0.3)
+        nextButton.fadeOut(duration: 0.3, delay: 0.3)
         
         UIView.animate(withDuration: 0.6, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.titleStack.alpha = 0

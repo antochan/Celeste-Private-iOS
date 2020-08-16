@@ -40,7 +40,7 @@ class HomeView: UIView {
         return label
     }()
     
-    private let calendarView: HomeSectionComponent = {
+    let calendarView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelOrange, titleText: "Our\nCalendar", sectionStyle: .horizontalHalf, image: #imageLiteral(resourceName: "People In Couple")))
@@ -48,7 +48,7 @@ class HomeView: UIView {
         return view
     }()
     
-    private let dailyChallengesView: HomeSectionComponent = {
+    let dailyChallengesView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.purple, titleText: "Daily\nChallenge", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Woman With Money")))
@@ -56,7 +56,7 @@ class HomeView: UIView {
         return view
     }()
     
-    private let couponsView: HomeSectionComponent = {
+    let couponsView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelYellow, titleText: "Coupon\nRewards", sectionStyle: .horizontalHalf, image: #imageLiteral(resourceName: "gift_illustration")))
@@ -64,7 +64,7 @@ class HomeView: UIView {
         return view
     }()
     
-    private let photosGalleryView: HomeSectionComponent = {
+    let photosGalleryView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelPink, titleText: "Photo\nGallery", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Couple 3")))
@@ -72,7 +72,7 @@ class HomeView: UIView {
         return view
     }()
     
-    private let randomThoughtsView: UIView = {
+    let randomThoughtsView: UIView = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelYellow, titleText: "Random\nThoughs", sectionStyle: .horizontalHalf, image: #imageLiteral(resourceName: "Character 34")))
@@ -90,12 +90,28 @@ class HomeView: UIView {
     }
     
     func appearAnimation() {
+        userImage.fadeIn(duration: 0.3, delay: 0)
         nameLabel.fadeIn(duration: 0.3, delay: 0.2)
         calendarView.fadeIn(duration: 0.3, delay: 0.5)
         dailyChallengesView.fadeIn(duration: 0.3, delay: 0.6)
         couponsView.fadeIn(duration: 0.3, delay: 0.8)
-        photosGalleryView.fadeIn(duration: 0.3, delay: 1)
-        randomThoughtsView.fadeIn(duration: 0.3, delay: 1.1)
+        photosGalleryView.fadeIn(duration: 0.3, delay: 0.9)
+        randomThoughtsView.fadeIn(duration: 0.3, delay: 0.9)
+    }
+    
+    func handleDisappearAnimation(completion: @escaping (Bool) -> ()) {
+        photosGalleryView.fadeOut(duration: 0.3, delay: 0)
+        randomThoughtsView.fadeOut(duration: 0.3, delay: 0)
+        couponsView.fadeOut(duration: 0.3, delay: 0.2)
+        dailyChallengesView.fadeOut(duration: 0.3, delay: 0.5)
+        calendarView.fadeOut(duration: 0.3, delay: 0.6)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.8, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.nameLabel.alpha = 0
+            self.userImage.alpha = 0
+        }, completion: { finished in
+            completion(true)
+        })
     }
     
     func applyHomeView(who: Who) {

@@ -27,12 +27,6 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        homeView.scrollView.isScrollEnabled = true
-//        homeView.scrollView.contentSize = CGSize(width: view.frame.width, height: 1000)
-//    }
-    
     override func loadView() {
         super.loadView()
         view = homeView
@@ -46,6 +40,14 @@ class HomeViewController: UIViewController {
     
     func configureActions() {
         homeView.userImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userImageTapped)))
+        homeView.calendarView.actions = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.homeView.handleDisappearAnimation { (done) in
+                if done {
+                    print("show calendar view")
+                }
+            }
+        }
     }
     
     @objc func userImageTapped() {
