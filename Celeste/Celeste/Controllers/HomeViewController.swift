@@ -31,6 +31,11 @@ class HomeViewController: UIViewController {
         super.loadView()
         view = homeView
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        homeView.appearAnimation()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +49,18 @@ class HomeViewController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.homeView.handleDisappearAnimation { (done) in
                 if done {
-                    print("show calendar view")
+                    strongSelf.presentCalendar(who: strongSelf.who)
                 }
             }
+        }
+    }
+    
+    func presentCalendar(who: Who) {
+        let calendarViewController = OurCalendarViewController(who: who)
+        calendarViewController.modalPresentationStyle = .fullScreen
+        calendarViewController.isHeroEnabled = true
+        present(calendarViewController, animated: true) {
+            calendarViewController.presented = true
         }
     }
     

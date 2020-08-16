@@ -9,6 +9,7 @@ target 'Celeste' do
 	pod 'Hero'
   pod 'OTPTextField'
   pod 'SwiftyGif'
+  pod 'FSCalendar'
 
   target 'CelesteTests' do
     inherit! :search_paths

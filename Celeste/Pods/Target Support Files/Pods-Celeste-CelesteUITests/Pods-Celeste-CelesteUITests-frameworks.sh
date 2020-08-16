@@ -161,11 +161,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Hero/Hero.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/OTPTextField/OTPTextField.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Hero/Hero.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/OTPTextField/OTPTextField.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework"

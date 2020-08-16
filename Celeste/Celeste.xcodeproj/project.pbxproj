@@ -32,6 +32,8 @@
 		8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A024E785E900442B80 /* HomeViewController.swift */; };
 		8A9A92A324E785F600442B80 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A224E785F600442B80 /* HomeView.swift */; };
 		8A9A92A524E8792900442B80 /* HomeSectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */; };
+		8A9A92A724E8D6BC00442B80 /* OurCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A624E8D6BC00442B80 /* OurCalendarView.swift */; };
+		8A9A92A924E9079800442B80 /* OurCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A824E9079800442B80 /* OurCalendarViewController.swift */; };
 		8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4224E2718D00582C74 /* OTPView.swift */; };
 		8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4424E2719900582C74 /* OTPViewController.swift */; };
 		8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4624E3BEEC00582C74 /* MainView.swift */; };
@@ -98,6 +100,8 @@
 		8A9A92A024E785E900442B80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A9A92A224E785F600442B80 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionComponent.swift; sourceTree = "<group>"; };
+		8A9A92A624E8D6BC00442B80 /* OurCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurCalendarView.swift; sourceTree = "<group>"; };
+		8A9A92A824E9079800442B80 /* OurCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurCalendarViewController.swift; sourceTree = "<group>"; };
 		8AB59B4224E2718D00582C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		8AB59B4424E2719900582C74 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		8AB59B4624E3BEEC00582C74 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				8AB59B4424E2719900582C74 /* OTPViewController.swift */,
 				8AB59B4824E3BEF600582C74 /* MainViewController.swift */,
 				8A9A92A024E785E900442B80 /* HomeViewController.swift */,
+				8A9A92A824E9079800442B80 /* OurCalendarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				8AB59B4224E2718D00582C74 /* OTPView.swift */,
 				8AB59B4624E3BEEC00582C74 /* MainView.swift */,
 				8A9A92A224E785F600442B80 /* HomeView.swift */,
+				8A9A92A624E8D6BC00442B80 /* OurCalendarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -545,6 +551,8 @@
 				8A7FD84C24E250C90057F3C5 /* Constants.swift in Sources */,
 				8A7FD85824E257D90057F3C5 /* Components.swift in Sources */,
 				8A106D7324E2474500BE8D34 /* WhoThisView.swift in Sources */,
+				8A9A92A724E8D6BC00442B80 /* OurCalendarView.swift in Sources */,
+				8A9A92A924E9079800442B80 /* OurCalendarViewController.swift in Sources */,
 				8A7FD85E24E258040057F3C5 /* ComponentTableViewCell.swift in Sources */,
 				8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */,
 				8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */,

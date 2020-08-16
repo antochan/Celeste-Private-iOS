@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Celeste/Pods-Celeste-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
 ${BUILT_PRODUCTS_DIR}/OTPTextField/OTPTextField.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework

@@ -1,24 +1,28 @@
 PODS:
+  - FSCalendar (2.8.1)
   - Hero (1.5.0)
   - OTPTextField (1.1.2)
   - SwiftyGif (5.3.0)
 
 DEPENDENCIES:
+  - FSCalendar
   - Hero
   - OTPTextField
   - SwiftyGif
 
 SPEC REPOS:
   trunk:
+    - FSCalendar
     - Hero
     - OTPTextField
     - SwiftyGif
 
 SPEC CHECKSUMS:
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   OTPTextField: 40130474e5fc0ac07782fa0bed346c9e81854e1d
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
 
-PODFILE CHECKSUM: b35f0fadfea69e966917af534294fa1c26152298
+PODFILE CHECKSUM: b3d556a9fecaaa18b15529261482c78535af70b4
 
 COCOAPODS: 1.8.4
