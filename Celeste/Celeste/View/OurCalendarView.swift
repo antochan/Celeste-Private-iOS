@@ -17,12 +17,20 @@ class OurCalendarView: UIView {
         return button
     }()
     
-    lazy var calendarView: FSCalendar = {
+    let calendarView: FSCalendar = {
         let calendarView = FSCalendar()
         calendarView.translatesAutoresizingMaskIntoConstraints = false
         calendarView.alpha = 0
         return calendarView
     }()
+    
+    let calendarTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    var calendarHeightConstraint: NSLayoutConstraint?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,15 +56,13 @@ private extension OurCalendarView {
         configureLayout()
     }
     
-    func configureSubviews() {
-        calendarView.today = Date()
-        calendarView.appearance.headerTitleColor = UIColor.AppColors.black
-        calendarView.appearance.headerTitleFont = UIFont.mainMedium(size: 20)
-        calendarView.appearance.weekdayTextColor = .lightGray
-        addSubviews(backButton, calendarView)
+    func configureSubviews() {        
+        addSubviews(backButton, calendarView, calendarTableView)
     }
     
     func configureLayout() {
+        calendarHeightConstraint = calendarView.heightAnchor.constraint(equalToConstant:  UIDevice.current.model.hasPrefix("iPad") ? 425.0 : 350.0)
+        calendarHeightConstraint?.isActive = true
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Spacing.sixteen),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.sixteen),
@@ -66,7 +72,11 @@ private extension OurCalendarView {
             calendarView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Spacing.sixteen),
             calendarView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.sixteen),
             calendarView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.sixteen),
-            calendarView.heightAnchor.constraint(equalToConstant: 400)
+            
+            calendarTableView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: Spacing.sixteen),
+            calendarTableView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor),
+            calendarTableView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor),
+            calendarTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

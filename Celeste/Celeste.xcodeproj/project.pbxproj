@@ -39,6 +39,7 @@
 		8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4624E3BEEC00582C74 /* MainView.swift */; };
 		8AB59B4924E3BEF600582C74 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4824E3BEF600582C74 /* MainViewController.swift */; };
 		8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4A24E3C0E000582C74 /* Colors.swift */; };
+		8ABA5BD524EA560200A405F9 /* OurCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5BD424EA560200A405F9 /* OurCalendarCell.swift */; };
 		8ADE68E124E6709D00C4E3EE /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */; };
 		8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */; };
 		8ADE68E524E6787E00C4E3EE /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */; };
@@ -107,6 +108,7 @@
 		8AB59B4624E3BEEC00582C74 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8AB59B4824E3BEF600582C74 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8AB59B4A24E3C0E000582C74 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8ABA5BD424EA560200A405F9 /* OurCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurCalendarCell.swift; sourceTree = "<group>"; };
 		8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
 		8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageButton.swift; sourceTree = "<group>"; };
 		8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */,
 				8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */,
 				8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */,
+				8ABA5BD424EA560200A405F9 /* OurCalendarCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABA5BD524EA560200A405F9 /* OurCalendarCell.swift in Sources */,
 				8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */,
 				8A7FD84F24E2575C0057F3C5 /* UserComponent.swift in Sources */,
 				8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */,
