@@ -21,6 +21,10 @@ public enum AppConstants {
     static let relationshipStartDate = Date(timeIntervalSince1970: 1581796800)
     static let laurenImage: UIImage = #imageLiteral(resourceName: "LaurenAnimoji")
     static let antoImage: UIImage = #imageLiteral(resourceName: "AntoAnimoji")
+    static let specialEventDates: [CalendarEvent] = [CalendarEvent(date: "2020/02/15",
+                                                                   eventType: .specialDay,
+                                                                   eventLocation: "Boston, MA",
+                                                                   eventTitle: "The Beggining")]
 }
 
 public enum Spacing {

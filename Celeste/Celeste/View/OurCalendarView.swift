@@ -27,7 +27,19 @@ class OurCalendarView: UIView {
     let calendarTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
         return tableView
+    }()
+    
+    let noEventLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "There are no events from the selected dates yet! Feel free to add one or select other dates :)"
+        label.font = UIFont.bellefair(size: 16)
+        label.textAlignment = .center
+        label.textColor = .lightGray
+        label.numberOfLines = 0
+        return label
     }()
     
     var calendarHeightConstraint: NSLayoutConstraint?
@@ -57,7 +69,7 @@ private extension OurCalendarView {
     }
     
     func configureSubviews() {        
-        addSubviews(backButton, calendarView, calendarTableView)
+        addSubviews(backButton, calendarView, calendarTableView, noEventLabel)
     }
     
     func configureLayout() {
@@ -76,7 +88,12 @@ private extension OurCalendarView {
             calendarTableView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: Spacing.sixteen),
             calendarTableView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor),
             calendarTableView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor),
-            calendarTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            calendarTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            noEventLabel.centerXAnchor.constraint(equalTo: calendarTableView.centerXAnchor),
+            noEventLabel.centerYAnchor.constraint(equalTo: calendarTableView.centerYAnchor),
+            noEventLabel.leadingAnchor.constraint(equalTo: calendarTableView.leadingAnchor, constant: Spacing.twentyFour),
+            noEventLabel.trailingAnchor.constraint(equalTo: calendarTableView.trailingAnchor, constant: -Spacing.twentyFour)
         ])
     }
 }

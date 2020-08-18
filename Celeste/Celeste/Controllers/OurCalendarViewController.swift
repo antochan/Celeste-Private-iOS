@@ -12,10 +12,17 @@ import FSCalendar
 class OurCalendarViewController: UIViewController {
     private let who: Who
     let calendarView = OurCalendarView()
-
+    
     var presented: Bool = false {
         didSet {
             calendarView.appearAnimation()
+        }
+    }
+    
+    var calendarData: [CalendarEvent] = AppConstants.specialEventDates
+    var calendarEventsTableData: [CalendarEvent] = [] {
+        didSet {
+            calendarView.calendarTableView.reloadData()
         }
     }
     
@@ -34,7 +41,7 @@ class OurCalendarViewController: UIViewController {
         panGesture.minimumNumberOfTouches = 1
         panGesture.maximumNumberOfTouches = 2
         return panGesture
-    }()
+        }()
     
     init(who: Who) {
         self.who = who
@@ -54,7 +61,7 @@ class OurCalendarViewController: UIViewController {
         super.viewDidAppear(animated)
         calendarView.appearAnimation()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureActions()
@@ -69,7 +76,7 @@ class OurCalendarViewController: UIViewController {
         calendarView.calendarView.delegate = self
         calendarView.calendarView.dataSource = self
         calendarView.calendarView.allowsMultipleSelection = true
-        calendarView.calendarView.register(OurCalendarCell.self, forCellReuseIdentifier: "cell")
+        calendarView.calendarView.register(OurCalendarCell.self, forCellReuseIdentifier: "CalendarCell")
         calendarView.calendarView.appearance.headerTitleColor = UIColor.AppColors.black
         calendarView.calendarView.appearance.headerTitleFont = UIFont.mainMedium(size: 22)
         calendarView.calendarView.appearance.weekdayFont = UIFont.main(size: 13)
@@ -80,6 +87,9 @@ class OurCalendarViewController: UIViewController {
         calendarView.calendarView.appearance.headerMinimumDissolvedAlpha = 0
         calendarView.calendarView.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendarView.calendarView.appearance.headerDateFormat = "MMMM"
+        calendarView.calendarView.appearance.eventOffset = CGPoint(x: 0, y: -Spacing.four)
+        calendarView.calendarView.appearance.eventDefaultColor = UIColor.AppColors.purple
+        calendarView.calendarView.appearance.eventSelectionColor = UIColor.AppColors.beige
         
         calendarView.calendarTableView.delegate = self
         calendarView.calendarTableView.dataSource = self
@@ -91,6 +101,11 @@ class OurCalendarViewController: UIViewController {
     
     @objc func backButtonTapped() {
         dismiss(animated: true)
+    }
+    
+    func updateCalendarTableEventsData() {
+        calendarEventsTableData = calendarData.filter { event in calendarView.calendarView.selectedDates.contains(where: { dateFormatter.string(from: $0) == event.date }) }
+        calendarView.noEventLabel.isHidden = !calendarEventsTableData.isEmpty
     }
 }
 
@@ -123,31 +138,34 @@ extension OurCalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did select date \(self.dateFormatter.string(from: date))")
-        let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
-        print("selected dates is \(selectedDates)")
+        //let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
-        self.configureVisibleCells()
+        configureVisibleCells()
+        updateCalendarTableEventsData()
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did select date \(self.dateFormatter.string(from: date))")
-        self.configureVisibleCells()
-    }
-
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        print("\(self.dateFormatter.string(from: calendar.currentPage))")
+        configureVisibleCells()
+        updateCalendarTableEventsData()
     }
     
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-        let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
+        let cell = calendar.dequeueReusableCell(withIdentifier: "CalendarCell", for: date, at: position)
         return cell
     }
     
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         self.configure(cell: cell, for: date, at: position)
+    }
+    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if !calendarData.filter({ $0.date == dateFormatter.string(from: date) }).isEmpty {
+            return 1
+        } else {
+            return 0
+        }
     }
     
     private func configureVisibleCells() {
@@ -163,11 +181,10 @@ extension OurCalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
         let diyCell = (cell as! OurCalendarCell)
         // Custom today circle
         diyCell.circleImageView.isHidden = !self.gregorian.isDateInToday(date)
+
         // Configure selection layer
         if position == .current {
-            
             var selectionType = SelectionType.none
-            
             if calendarView.calendarView.selectedDates.contains(date) {
                 let previousDate = self.gregorian.date(byAdding: .day, value: -1, to: date)!
                 let nextDate = self.gregorian.date(byAdding: .day, value: 1, to: date)!
@@ -195,7 +212,6 @@ extension OurCalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
             }
             diyCell.selectionLayer.isHidden = false
             diyCell.selectionType = selectionType
-            
         } else {
             diyCell.circleImageView.isHidden = true
             diyCell.selectionLayer.isHidden = true
@@ -207,7 +223,7 @@ extension OurCalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
 
 extension OurCalendarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return calendarEventsTableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -219,9 +235,5 @@ extension OurCalendarViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
     }
 }
