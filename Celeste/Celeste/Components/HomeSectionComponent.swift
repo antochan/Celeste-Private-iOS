@@ -9,6 +9,7 @@
 import UIKit
 
 public enum HomeSectionStyle {
+    case mainCard
     case horizontalHalf
     case verticalHalf
 }
@@ -44,7 +45,6 @@ class HomeSectionComponent: UIView, Component, Pressable {
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.AppColors.black
-        label.font = .mainMedium(size: 15)
         return label
     }()
     
@@ -80,9 +80,15 @@ class HomeSectionComponent: UIView, Component, Pressable {
         case .horizontalHalf:
             imageView.widthAnchor.constraint(equalTo: cardView.widthAnchor, multiplier: 0.5).isActive = true
             imageView.heightAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: 0.8).isActive = true
+            titleLabel.font = .mainMedium(size: 14)
         case .verticalHalf:
             imageView.widthAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: 0.5).isActive = true
-            imageView.heightAnchor.constraint(equalTo: cardView.widthAnchor).isActive = true
+            imageView.heightAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: 0.7).isActive = true
+            titleLabel.font = .mainMedium(size: 14)
+        case .mainCard:
+            imageView.widthAnchor.constraint(equalTo: cardView.widthAnchor, multiplier: 0.5).isActive = true
+            imageView.heightAnchor.constraint(equalTo: cardView.heightAnchor).isActive = true
+            titleLabel.font = .mainMedium(size: 18)
         }
     }
 }

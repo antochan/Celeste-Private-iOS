@@ -8,7 +8,13 @@
 
 import UIKit
 
-class RoundedShadowView: UIView, Pressable {
+class RoundedShadowView: UIView, Pressable, Component {
+    struct ViewModel {
+        let backgroundColor: UIColor
+        let shadowColor: UIColor
+        let shadowOpacity: Float
+        let shadowRadius: CGFloat
+    }
     
     let containerView = UIView()
     let cornerRadius: CGFloat = 6.0
@@ -39,14 +45,6 @@ class RoundedShadowView: UIView, Pressable {
     }
     
     func layoutView() {
-        
-        // set the shadow of the view's layer
-        layer.backgroundColor = UIColor.clear.cgColor
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 4.0)
-        layer.shadowOpacity = 0.1
-        layer.shadowRadius = 4.0
-        
         // set the cornerRadius of the containerView's layer
         containerView.layer.cornerRadius = cornerRadius
         containerView.layer.masksToBounds = true
@@ -65,5 +63,13 @@ class RoundedShadowView: UIView, Pressable {
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
+    func apply(viewModel: ViewModel) {
+        layer.backgroundColor = viewModel.backgroundColor.cgColor
+        layer.shadowColor = viewModel.shadowColor.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 4.0)
+        layer.shadowOpacity = viewModel.shadowOpacity
+        layer.shadowRadius = viewModel.shadowRadius
     }
 }

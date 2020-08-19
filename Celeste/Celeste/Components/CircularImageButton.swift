@@ -19,6 +19,7 @@ class CircularImageButton: UIView, Component {
     
     let circleView: RoundedShadowView = {
         let view = RoundedShadowView()
+        view.apply(viewModel: RoundedShadowView.ViewModel(backgroundColor: UIColor.AppColors.white, shadowColor: UIColor.AppColors.black, shadowOpacity: 0.1, shadowRadius: 4.0))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

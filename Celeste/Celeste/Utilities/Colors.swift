@@ -40,13 +40,16 @@ extension UIColor {
 extension UIColor {
     struct AppColors {
         static let black = UIColor(hexString: "#000000")
-        static let purple = UIColor(hexString: "#E4DDF0")
         static let beige = UIColor(hexString: "#F5F3F1")
         static let white = UIColor(hexString: "#FFFFFF")
         static let offWhite = UIColor(hexString: "#F9FBF5")
+        static let lightGray = UIColor(hexString: "#F6F7FB")
+        
         static let pastelOrange = UIColor(hexString: "#FFCCB4")
+        static let purple = UIColor(hexString: "#E4DDF0")
         static let darkPastelPurple = UIColor(hexString: "#D5D8FF")
         static let pastelYellow = UIColor(hexString: "#FEEFD6")
         static let pastelPink = UIColor(hexString: "#FAE4E6")
+        static let pastelRed = UIColor(hexString: "#ff6961")
     }
 }

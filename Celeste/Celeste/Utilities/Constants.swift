@@ -24,7 +24,8 @@ public enum AppConstants {
     static let specialEventDates: [CalendarEvent] = [CalendarEvent(date: "2020/02/15",
                                                                    eventType: .specialDay,
                                                                    eventLocation: "Boston, MA",
-                                                                   eventTitle: "The Beggining")]
+                                                                   eventTitle: "The Beggining")
+                                                     ]
 }
 
 public enum Spacing {

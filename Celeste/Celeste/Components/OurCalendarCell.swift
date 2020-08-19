@@ -41,7 +41,7 @@ class OurCalendarCell: FSCalendarCell {
         self.circleImageView = circleImageView
         
         let selectionLayer = CAShapeLayer()
-        selectionLayer.fillColor = UIColor.black.cgColor
+        selectionLayer.fillColor = UIColor.AppColors.purple.cgColor
         selectionLayer.actions = ["hidden": NSNull()]
         self.contentView.layer.insertSublayer(selectionLayer, below: self.titleLabel!.layer)
         self.selectionLayer = selectionLayer

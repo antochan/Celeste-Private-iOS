@@ -73,7 +73,7 @@ private extension OurCalendarView {
     }
     
     func configureLayout() {
-        calendarHeightConstraint = calendarView.heightAnchor.constraint(equalToConstant:  UIDevice.current.model.hasPrefix("iPad") ? 425.0 : 350.0)
+        calendarHeightConstraint = calendarView.heightAnchor.constraint(equalToConstant:  UIDevice.current.model.hasPrefix("iPad") ? 420.0 : 320.0)
         calendarHeightConstraint?.isActive = true
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Spacing.sixteen),
@@ -85,7 +85,7 @@ private extension OurCalendarView {
             calendarView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.sixteen),
             calendarView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.sixteen),
             
-            calendarTableView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: Spacing.sixteen),
+            calendarTableView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: Spacing.twentyFour),
             calendarTableView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor),
             calendarTableView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor),
             calendarTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),

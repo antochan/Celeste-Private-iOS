@@ -93,7 +93,7 @@ class OurCalendarViewController: UIViewController {
         
         calendarView.calendarTableView.delegate = self
         calendarView.calendarTableView.dataSource = self
-        calendarView.calendarTableView.register(UITableViewCell.self, forCellReuseIdentifier: "testCell")
+        calendarView.calendarTableView.register(ComponentTableViewCell<CalendarEventTableCellComponent>.self, forCellReuseIdentifier: "CalendarEventCell")
         
         view.addGestureRecognizer(self.scopeGesture)
         calendarView.calendarTableView.panGestureRecognizer.require(toFail: self.scopeGesture)
@@ -227,13 +227,20 @@ extension OurCalendarViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "testCell", for: indexPath) as! UITableViewCell
-        cell.textLabel?.text = "Test"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarEventCell", for: indexPath) as! ComponentTableViewCell<CalendarEventTableCellComponent>
+        let calendarComponentVM = CalendarEventTableCellComponent.ViewModel(calendarEvent: calendarEventsTableData[indexPath.row])
+        let cellVM = ComponentTableViewCell<CalendarEventTableCellComponent>.ViewModel(componentViewModel: calendarComponentVM)
+        cell.apply(viewModel: cellVM)
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170
     }
 }

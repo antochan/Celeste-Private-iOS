@@ -7,13 +7,29 @@
 //
 
 import Foundation
+import UIKit
 
-enum EventType {
-    case food
-    case altered
-    case date
-    case specialDay
-    case random
+enum EventType: String {
+    case food = "Food"
+    case altered = "Altered"
+    case date = "Date"
+    case specialDay = "Special Occasion"
+    case random = "Random"
+    
+    public var color: UIColor {
+        switch self {
+        case .food:
+            return UIColor.AppColors.pastelOrange
+        case .altered:
+            return UIColor.AppColors.pastelPink
+        case .date:
+            return UIColor.AppColors.pastelRed
+        case .specialDay:
+            return UIColor.AppColors.purple
+        case .random:
+            return UIColor.AppColors.pastelYellow
+        }
+    }
 }
 
 struct CalendarEvent {

@@ -41,6 +41,7 @@
 		8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4A24E3C0E000582C74 /* Colors.swift */; };
 		8ABA5BD524EA560200A405F9 /* OurCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5BD424EA560200A405F9 /* OurCalendarCell.swift */; };
 		8ABA5BD824EB501400A405F9 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5BD724EB501400A405F9 /* CalendarEvent.swift */; };
+		8ABA5BDA24EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5BD924EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift */; };
 		8ADE68E124E6709D00C4E3EE /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */; };
 		8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */; };
 		8ADE68E524E6787E00C4E3EE /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */; };
@@ -111,6 +112,7 @@
 		8AB59B4A24E3C0E000582C74 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8ABA5BD424EA560200A405F9 /* OurCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurCalendarCell.swift; sourceTree = "<group>"; };
 		8ABA5BD724EB501400A405F9 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		8ABA5BD924EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventTableCellComponent.swift; sourceTree = "<group>"; };
 		8ADE68E024E6709D00C4E3EE /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
 		8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageButton.swift; sourceTree = "<group>"; };
 		8ADE68E424E6787E00C4E3EE /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				8ADE68E224E6711000C4E3EE /* CircularImageButton.swift */,
 				8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */,
 				8ABA5BD424EA560200A405F9 /* OurCalendarCell.swift */,
+				8ABA5BD924EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				8A106D7024E2471400BE8D34 /* WhoThisViewController.swift in Sources */,
 				8A7FD84C24E250C90057F3C5 /* Constants.swift in Sources */,
 				8A7FD85824E257D90057F3C5 /* Components.swift in Sources */,
+				8ABA5BDA24EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift in Sources */,
 				8A106D7324E2474500BE8D34 /* WhoThisView.swift in Sources */,
 				8A9A92A724E8D6BC00442B80 /* OurCalendarView.swift in Sources */,
 				8A9A92A924E9079800442B80 /* OurCalendarViewController.swift in Sources */,
