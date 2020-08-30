@@ -14,6 +14,15 @@ class OurCalendarView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: Spacing.four, left: Spacing.four, bottom: Spacing.four, right: Spacing.four)
+        return button
+    }()
+    
+    let addButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(#imageLiteral(resourceName: "add"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: Spacing.four, left: Spacing.four, bottom: Spacing.four, right: Spacing.four)
         return button
     }()
     
@@ -69,7 +78,7 @@ private extension OurCalendarView {
     }
     
     func configureSubviews() {        
-        addSubviews(backButton, calendarView, calendarTableView, noEventLabel)
+        addSubviews(backButton, addButton, calendarView, calendarTableView, noEventLabel)
     }
     
     func configureLayout() {
@@ -80,6 +89,11 @@ private extension OurCalendarView {
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.sixteen),
             backButton.heightAnchor.constraint(equalToConstant: 22),
             backButton.widthAnchor.constraint(equalToConstant: 22),
+            
+            addButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Spacing.sixteen),
+            addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.sixteen),
+            addButton.heightAnchor.constraint(equalToConstant: 22),
+            addButton.widthAnchor.constraint(equalToConstant: 22),
             
             calendarView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Spacing.sixteen),
             calendarView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.sixteen),

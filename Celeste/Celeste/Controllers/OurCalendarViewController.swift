@@ -8,6 +8,7 @@
 
 import UIKit
 import FSCalendar
+import SPStorkController
 
 class OurCalendarViewController: UIViewController {
     private let who: Who
@@ -72,6 +73,10 @@ class OurCalendarViewController: UIViewController {
         super.viewDidLoad()
         configureActions()
         configureCalendar()
+        fetchEventsData()
+    }
+    
+    func fetchEventsData() {
         calendarServices.getCalendarEvents { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
@@ -85,6 +90,7 @@ class OurCalendarViewController: UIViewController {
     
     func configureActions() {
         calendarView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        calendarView.addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
     }
     
     func configureCalendar() {
@@ -116,6 +122,18 @@ class OurCalendarViewController: UIViewController {
     
     @objc func backButtonTapped() {
         dismiss(animated: true)
+    }
+    
+    @objc func addButtonTapped() {
+        if calendarView.calendarView.selectedDates.isEmpty {
+            displayAlert(message: "No selected dates! Select at least one date to add an event!", title: "Oops!")
+        } else {
+            let addEventViewController = AddCalendarEventViewController(selectedDates: calendarView.calendarView.selectedDates,
+                                                                        calendarService: calendarServices)
+            presentAsStork(addEventViewController)
+            //present(addEventViewController,animated: true)
+            //print(calendarView.calendarView.selectedDates.map({self.dateFormatter.string(from: $0)}))
+        }
     }
     
     func updateCalendarTableEventsData() {
@@ -153,7 +171,6 @@ extension OurCalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        //let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }

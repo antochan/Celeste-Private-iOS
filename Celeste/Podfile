@@ -18,6 +18,7 @@ target 'Celeste' do
   pod 'CodableFirebase'
   pod 'Kingfisher', '~> 5.0'
   pod 'lottie-ios'
+  pod 'SPStorkController'
 
   target 'CelesteTests' do
     inherit! :search_paths

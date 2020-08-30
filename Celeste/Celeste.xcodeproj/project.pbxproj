@@ -37,6 +37,9 @@
 		8A9F1D7024FB7C70000B203A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A9F1D6F24FB7C70000B203A /* GoogleService-Info.plist */; };
 		8A9F1D7324FB8134000B203A /* CollectionReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7224FB8134000B203A /* CollectionReferences.swift */; };
 		8A9F1D7524FB8232000B203A /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7424FB8232000B203A /* CalendarServices.swift */; };
+		8A9F1D7724FBAAE5000B203A /* AddCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */; };
+		8A9F1D7924FBAD73000B203A /* AddCalendarEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */; };
+		8A9F1D7B24FC2675000B203A /* PillComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7A24FC2675000B203A /* PillComponent.swift */; };
 		8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4224E2718D00582C74 /* OTPView.swift */; };
 		8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4424E2719900582C74 /* OTPViewController.swift */; };
 		8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4624E3BEEC00582C74 /* MainView.swift */; };
@@ -111,6 +114,9 @@
 		8A9F1D6F24FB7C70000B203A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A9F1D7224FB8134000B203A /* CollectionReferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReferences.swift; sourceTree = "<group>"; };
 		8A9F1D7424FB8232000B203A /* CalendarServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServices.swift; sourceTree = "<group>"; };
+		8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarEventViewController.swift; sourceTree = "<group>"; };
+		8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarEventView.swift; sourceTree = "<group>"; };
+		8A9F1D7A24FC2675000B203A /* PillComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillComponent.swift; sourceTree = "<group>"; };
 		8AB59B4224E2718D00582C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		8AB59B4424E2719900582C74 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		8AB59B4624E3BEEC00582C74 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -248,6 +254,7 @@
 				8AB59B4824E3BEF600582C74 /* MainViewController.swift */,
 				8A9A92A024E785E900442B80 /* HomeViewController.swift */,
 				8A9A92A824E9079800442B80 /* OurCalendarViewController.swift */,
+				8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 				8AB59B4624E3BEEC00582C74 /* MainView.swift */,
 				8A9A92A224E785F600442B80 /* HomeView.swift */,
 				8A9A92A624E8D6BC00442B80 /* OurCalendarView.swift */,
+				8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 			children = (
 				8A7FD85224E257AD0057F3C5 /* Protocol */,
 				8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */,
+				8A9F1D7A24FC2675000B203A /* PillComponent.swift */,
 				8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */,
 				8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */,
 				8A7FD84E24E2575C0057F3C5 /* UserComponent.swift */,
@@ -565,12 +574,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ABA5BD524EA560200A405F9 /* OurCalendarCell.swift in Sources */,
+				8A9F1D7924FBAD73000B203A /* AddCalendarEventView.swift in Sources */,
 				8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */,
 				8A7FD84F24E2575C0057F3C5 /* UserComponent.swift in Sources */,
 				8A9F1D7524FB8232000B203A /* CalendarServices.swift in Sources */,
 				8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */,
 				8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */,
 				8A7FD86024E258040057F3C5 /* ButtonComponent.swift in Sources */,
+				8A9F1D7724FBAAE5000B203A /* AddCalendarEventViewController.swift in Sources */,
 				8A7FD85724E257D90057F3C5 /* PressHighlightable.swift in Sources */,
 				8A106D3F24E2445F00BE8D34 /* AppDelegate.swift in Sources */,
 				8ABA5BD824EB501400A405F9 /* CalendarEvent.swift in Sources */,
@@ -590,6 +601,7 @@
 				8A7FD84C24E250C90057F3C5 /* Constants.swift in Sources */,
 				8A7FD85824E257D90057F3C5 /* Components.swift in Sources */,
 				8ABA5BDA24EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift in Sources */,
+				8A9F1D7B24FC2675000B203A /* PillComponent.swift in Sources */,
 				8A106D7324E2474500BE8D34 /* WhoThisView.swift in Sources */,
 				8A9A92A724E8D6BC00442B80 /* OurCalendarView.swift in Sources */,
 				8A9A92A924E9079800442B80 /* OurCalendarViewController.swift in Sources */,
