@@ -57,6 +57,7 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
     private let calendarEventTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
         label.font = UIFont.mainMedium(size: 18)
         label.textColor = UIColor.AppColors.black
         return label
@@ -65,8 +66,18 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
     private let calendarEventLocationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
         label.font = UIFont.main(size: 15)
         label.textColor = .gray
+        return label
+    }()
+    
+    private let calendarEventDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = UIFont.main(size: 12)
+        label.textColor = UIColor.AppColors.black
         return label
     }()
     
@@ -97,7 +108,13 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
     func apply(viewModel: ViewModel) {
         eventTypeLabel.text = viewModel.calendarEvent.eventType.rawValue
         calendarEventTitleLabel.text = viewModel.calendarEvent.eventTitle
+        
+        calendarEventLocationLabel.isHidden = viewModel.calendarEvent.eventLocation == nil
         calendarEventLocationLabel.text = viewModel.calendarEvent.eventLocation
+        
+        calendarEventDescriptionLabel.isHidden = viewModel.calendarEvent.eventDescription == nil
+        calendarEventDescriptionLabel.text = viewModel.calendarEvent.eventDescription
+        
         shadowView.apply(viewModel: RoundedShadowView.ViewModel(backgroundColor: viewModel.calendarEvent.eventType.color, shadowColor: viewModel.calendarEvent.eventType.color, shadowOpacity: 0.6, shadowRadius: 8.0))
     }
     
@@ -120,15 +137,16 @@ private extension CalendarEventTableCellComponent {
         addSubview(cardView)
         cardView.addSubviews(shadowView, moreButton, infoStack)
         shadowView.addSubview(eventTypeLabel)
-        infoStack.addArrangedSubviews(calendarEventTitleLabel, calendarEventLocationLabel)
+        infoStack.addArrangedSubviews(calendarEventTitleLabel, calendarEventLocationLabel, calendarEventDescriptionLabel)
+        infoStack.setCustomSpacing(Spacing.sixteen, after: calendarEventLocationLabel)
     }
     
     func configureLayout() {
         NSLayoutConstraint.activate([
-            cardView.topAnchor.constraint(equalTo: topAnchor),
+            cardView.topAnchor.constraint(equalTo: topAnchor, constant: Spacing.eight),
             cardView.leadingAnchor.constraint(equalTo: leadingAnchor),
             cardView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            cardView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Spacing.eight),
             
             moreButton.centerYAnchor.constraint(equalTo: shadowView.centerYAnchor),
             moreButton.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Spacing.sixteen),
@@ -145,7 +163,8 @@ private extension CalendarEventTableCellComponent {
             
             infoStack.topAnchor.constraint(equalTo: shadowView.bottomAnchor, constant: Spacing.twentyFour),
             infoStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: Spacing.sixteen),
-            infoStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Spacing.sixteen)
+            infoStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Spacing.sixteen),
+            infoStack.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -Spacing.twentyFour)
         ])
     }
 }

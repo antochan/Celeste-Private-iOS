@@ -88,7 +88,7 @@ private extension OurCalendarView {
             calendarTableView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: Spacing.twentyFour),
             calendarTableView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor),
             calendarTableView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor),
-            calendarTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            calendarTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             noEventLabel.centerXAnchor.constraint(equalTo: calendarTableView.centerXAnchor),
             noEventLabel.centerYAnchor.constraint(equalTo: calendarTableView.centerYAnchor),

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum EventType: String {
+enum EventType: String, Codable {
     case food = "Food"
     case altered = "Altered"
     case date = "Date"
@@ -32,9 +32,11 @@ enum EventType: String {
     }
 }
 
-struct CalendarEvent {
+struct CalendarEvent: Codable {
+    let id: String
     let date: String // In YYYY/MM/dd format
     let eventType: EventType
     let eventLocation: String?
+    let eventDescription: String?
     let eventTitle: String
 }

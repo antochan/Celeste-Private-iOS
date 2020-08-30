@@ -181,7 +181,7 @@ private extension HomeView {
             titleStack.centerYAnchor.constraint(equalTo: userImage.centerYAnchor),
             titleStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Spacing.sixteen),
             
-            calendarView.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: Spacing.sixteen),
+            calendarView.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: Spacing.thirtyTwo),
             calendarView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Spacing.sixteen),
             calendarView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Spacing.sixteen),
             calendarView.heightAnchor.constraint(equalToConstant: 170),

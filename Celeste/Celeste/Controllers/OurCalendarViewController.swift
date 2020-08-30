@@ -12,6 +12,7 @@ import FSCalendar
 class OurCalendarViewController: UIViewController {
     private let who: Who
     let calendarView = OurCalendarView()
+    private let calendarServices: CalendarServices
     
     var presented: Bool = false {
         didSet {
@@ -19,8 +20,12 @@ class OurCalendarViewController: UIViewController {
         }
     }
     
-    var calendarData: [CalendarEvent] = AppConstants.specialEventDates
-    var calendarEventsTableData: [CalendarEvent] = [] {
+    private var calendarData: [CalendarEvent] = [] {
+        didSet {
+            calendarView.calendarView.reloadData()
+        }
+    }
+    private var calendarEventsTableData: [CalendarEvent] = [] {
         didSet {
             calendarView.calendarTableView.reloadData()
         }
@@ -43,8 +48,9 @@ class OurCalendarViewController: UIViewController {
         return panGesture
         }()
     
-    init(who: Who) {
+    init(who: Who, calendarServices: CalendarServices) {
         self.who = who
+        self.calendarServices = calendarServices
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,6 +72,15 @@ class OurCalendarViewController: UIViewController {
         super.viewDidLoad()
         configureActions()
         configureCalendar()
+        calendarServices.getCalendarEvents { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let calendarEvents):
+                strongSelf.calendarData = calendarEvents
+            case .failure(_):
+                strongSelf.displayAlert(message: "Something went wrong getting dates from server, let anto know :( Sorry!", title: "Oops!")
+            }
+        }
     }
     
     func configureActions() {
@@ -235,12 +250,8 @@ extension OurCalendarViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        tableView.estimatedRowHeight = 186
+        return UITableView.automaticDimension
     }
 }

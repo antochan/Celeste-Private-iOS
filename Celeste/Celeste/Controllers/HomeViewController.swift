@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
     }
     
     func presentCalendar(who: Who) {
-        let calendarViewController = OurCalendarViewController(who: who)
+        let calendarViewController = OurCalendarViewController(who: who, calendarServices: CalendarServices())
         calendarViewController.modalPresentationStyle = .fullScreen
         calendarViewController.isHeroEnabled = true
         present(calendarViewController, animated: true) {

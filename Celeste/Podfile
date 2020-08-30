@@ -10,6 +10,14 @@ target 'Celeste' do
   pod 'OTPTextField'
   pod 'SwiftyGif'
   pod 'FSCalendar'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'CodableFirebase'
+  pod 'Kingfisher', '~> 5.0'
+  pod 'lottie-ios'
 
   target 'CelesteTests' do
     inherit! :search_paths

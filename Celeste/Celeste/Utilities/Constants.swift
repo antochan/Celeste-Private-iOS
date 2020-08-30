@@ -21,11 +21,6 @@ public enum AppConstants {
     static let relationshipStartDate = Date(timeIntervalSince1970: 1581796800)
     static let laurenImage: UIImage = #imageLiteral(resourceName: "LaurenAnimoji")
     static let antoImage: UIImage = #imageLiteral(resourceName: "AntoAnimoji")
-    static let specialEventDates: [CalendarEvent] = [CalendarEvent(date: "2020/02/15",
-                                                                   eventType: .specialDay,
-                                                                   eventLocation: "Boston, MA",
-                                                                   eventTitle: "The Beggining")
-                                                     ]
 }
 
 public enum Spacing {
@@ -108,4 +103,16 @@ public enum BorderWidth: CGFloat {
     case normal = 1.0
     case thin = 0.5
     case none = 0.0
+}
+
+protocol resultFailures { }
+
+enum Result<T> {
+    case success(T)
+    case failure(resultFailures)
+}
+
+enum CalendarFailures: resultFailures {
+    case calendarDataError(Error)
+    case decodingError(_ message: String)
 }
