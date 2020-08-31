@@ -10,6 +10,8 @@ import UIKit
 
 class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
     public let configuration = PressableConfiguration(pressScale: .medium)
+    private var calendarEvent: CalendarEvent?
+    public var actions: Actions?
     
     struct ViewModel {
         let calendarEvent: CalendarEvent
@@ -106,13 +108,14 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
     }
     
     func apply(viewModel: ViewModel) {
+        self.calendarEvent = viewModel.calendarEvent
         eventTypePill.apply(viewModel: PillComponent.ViewModel(pillBackgroundColor: viewModel.calendarEvent.eventType.color, pillLabelText: viewModel.calendarEvent.eventType.rawValue, textColor: .white, shadowColor: viewModel.calendarEvent.eventType.color, shadowOpacity: 0.6, shadowRadius: 6.0))
         calendarEventTitleLabel.text = viewModel.calendarEvent.eventTitle
         
-        calendarEventLocationLabel.isHidden = viewModel.calendarEvent.eventLocation == nil
+        calendarEventLocationLabel.isHidden = viewModel.calendarEvent.eventLocation == nil || viewModel.calendarEvent.eventLocation == ""
         calendarEventLocationLabel.text = viewModel.calendarEvent.eventLocation
         
-        calendarEventDescriptionLabel.isHidden = viewModel.calendarEvent.eventDescription == nil
+        calendarEventDescriptionLabel.isHidden = viewModel.calendarEvent.eventDescription == nil || viewModel.calendarEvent.eventDescription == ""
         calendarEventDescriptionLabel.text = viewModel.calendarEvent.eventDescription
         calendarEventDateLabel.text = viewModel.calendarEvent.date
     }
@@ -130,6 +133,7 @@ private extension CalendarEventTableCellComponent {
         layer.cornerRadius = 15
         configureSubviews()
         configureLayout()
+        moreButton.addTarget(self, action: #selector(moreTapped), for: .touchUpInside)
     }
     
     func configureSubviews() {
@@ -163,4 +167,13 @@ private extension CalendarEventTableCellComponent {
             calendarEventDateLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Spacing.sixteen)
         ])
     }
+    
+    @objc func moreTapped() {
+        actions?(calendarEvent)
+    }
+}
+
+//MARK: - Actionable
+extension CalendarEventTableCellComponent: Actionable {
+    public typealias Actions = (_ calendarEvent: CalendarEvent?) -> Void
 }

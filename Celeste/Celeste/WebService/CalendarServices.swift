@@ -12,6 +12,8 @@ import CodableFirebase
 
 class CalendarServices {
     typealias getDatesInfoHandler = (_ result: Result<[CalendarEvent]>) -> Void
+    typealias postCalendarEventsHandler = (_ success: Bool) -> Void
+    typealias removeCalendarEventsHandler = (_ success: Bool) -> Void
     
     private func reference(to collectionReference: CollectionReferences) -> CollectionReference {
         return Firestore.firestore().collection(collectionReference.rawValue)
@@ -32,6 +34,34 @@ class CalendarServices {
                     calendarEvents.append(event)
                 }
                 completion(Result.success(calendarEvents))
+            }
+        }
+    }
+    
+    func postCalendarEvents(calendarEvents: [CalendarEvent], completion: @escaping postCalendarEventsHandler) {
+        calendarEvents.forEach {
+            reference(to: .Calendar).document($0.id).setData([
+                "date": $0.date,
+                "eventDescription": $0.eventDescription ?? "",
+                "eventLocation": $0.eventLocation ?? "",
+                "eventTitle": $0.eventTitle,
+                "eventType": $0.eventType.rawValue,
+                "id": $0.id
+            ]) { err in
+                if let _ = err {
+                    completion(false)
+                }
+            }
+        }
+        completion(true)
+    }
+    
+    func removeCalendarEvent(calendarEvent: CalendarEvent, completion: @escaping removeCalendarEventsHandler) {
+        reference(to: .Calendar).document(calendarEvent.id).delete() { err in
+            if let _ = err {
+                completion(false)
+            } else {
+                completion(true)
             }
         }
     }

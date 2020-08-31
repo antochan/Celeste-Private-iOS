@@ -117,3 +117,9 @@ extension UIViewController {
            self.present(alertController, animated: true, completion: nil)
        }
 }
+
+extension Optional where Wrapped == String {
+    var isNilOrEmpty: Bool {
+        return self?.isEmpty ?? true
+    }
+}

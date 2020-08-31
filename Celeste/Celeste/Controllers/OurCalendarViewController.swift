@@ -24,6 +24,7 @@ class OurCalendarViewController: UIViewController {
     private var calendarData: [CalendarEvent] = [] {
         didSet {
             calendarView.calendarView.reloadData()
+            updateCalendarTableEventsData()
         }
     }
     private var calendarEventsTableData: [CalendarEvent] = [] {
@@ -83,7 +84,18 @@ class OurCalendarViewController: UIViewController {
             case .success(let calendarEvents):
                 strongSelf.calendarData = calendarEvents
             case .failure(_):
-                strongSelf.displayAlert(message: "Something went wrong getting dates from server, let anto know :( Sorry!", title: "Oops!")
+                strongSelf.displayAlert(message: "Something went wrong getting dates from server, let anto know :( Sorry! 420", title: "Oops!")
+            }
+        }
+    }
+    
+    func removeCalendarEvent(calendarEvent: CalendarEvent) {
+        calendarServices.removeCalendarEvent(calendarEvent: calendarEvent) { [weak self] success in
+            guard let strongSelf = self else { return }
+            if success {
+                strongSelf.fetchEventsData()
+            } else {
+                strongSelf.displayAlert(message: "Something went wrong attempting to delete this event, let anto know 421!", title: "Oops!")
             }
         }
     }
@@ -130,6 +142,7 @@ class OurCalendarViewController: UIViewController {
         } else {
             let addEventViewController = AddCalendarEventViewController(selectedDates: calendarView.calendarView.selectedDates.map({self.dateFormatter.string(from: $0)}),
                                                                         calendarService: calendarServices)
+            addEventViewController.delegate = self
             let transitionDelegate = SPStorkTransitioningDelegate()
             transitionDelegate.customHeight = 610
             addEventViewController.transitioningDelegate = transitionDelegate
@@ -142,6 +155,20 @@ class OurCalendarViewController: UIViewController {
     func updateCalendarTableEventsData() {
         calendarEventsTableData = calendarData.filter { event in calendarView.calendarView.selectedDates.contains(where: { dateFormatter.string(from: $0) == event.date }) }
         calendarView.noEventLabel.isHidden = !calendarEventsTableData.isEmpty
+    }
+    
+    func calendarMoreTapped(calendarEvent: CalendarEvent) {
+        let alert = UIAlertController(title: "Are you sure?", message: "Are you sure you want to delete this event?", preferredStyle: .actionSheet)
+
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive , handler:{ (UIAlertAction) in
+            self.removeCalendarEvent(calendarEvent: calendarEvent)
+        }))
+
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction) in
+            // no - op
+        }))
+
+        present(alert, animated: true)
     }
 }
 
@@ -267,11 +294,23 @@ extension OurCalendarViewController: UITableViewDelegate, UITableViewDataSource 
         let cellVM = ComponentTableViewCell<CalendarEventTableCellComponent>.ViewModel(componentViewModel: calendarComponentVM)
         cell.apply(viewModel: cellVM)
         cell.selectionStyle = .none
+        cell.component.actions = { [weak self] calendarEvent in
+            guard let event = calendarEvent, let strongSelf = self else { return }
+            strongSelf.calendarMoreTapped(calendarEvent: event)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         tableView.estimatedRowHeight = 186
         return UITableView.automaticDimension
+    }
+}
+
+//MARK: - AddCalendarEventDelegate
+
+extension OurCalendarViewController: AddCalendarEventDelegate {
+    func successfullyAdded() {
+        fetchEventsData()
     }
 }
