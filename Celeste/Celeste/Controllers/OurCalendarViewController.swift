@@ -128,11 +128,14 @@ class OurCalendarViewController: UIViewController {
         if calendarView.calendarView.selectedDates.isEmpty {
             displayAlert(message: "No selected dates! Select at least one date to add an event!", title: "Oops!")
         } else {
-            let addEventViewController = AddCalendarEventViewController(selectedDates: calendarView.calendarView.selectedDates,
+            let addEventViewController = AddCalendarEventViewController(selectedDates: calendarView.calendarView.selectedDates.map({self.dateFormatter.string(from: $0)}),
                                                                         calendarService: calendarServices)
-            presentAsStork(addEventViewController)
-            //present(addEventViewController,animated: true)
-            //print(calendarView.calendarView.selectedDates.map({self.dateFormatter.string(from: $0)}))
+            let transitionDelegate = SPStorkTransitioningDelegate()
+            transitionDelegate.customHeight = 610
+            addEventViewController.transitioningDelegate = transitionDelegate
+            addEventViewController.modalPresentationStyle = .custom
+            addEventViewController.modalPresentationCapturesStatusBarAppearance = true
+            present(addEventViewController, animated: true, completion: nil)
         }
     }
     

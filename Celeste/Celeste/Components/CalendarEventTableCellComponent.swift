@@ -72,6 +72,15 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
         return label
     }()
     
+    private let calendarEventDateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        label.font = UIFont.main(size: 12)
+        label.textColor = .lightGray
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -97,7 +106,7 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
     }
     
     func apply(viewModel: ViewModel) {
-        eventTypePill.apply(viewModel: PillComponent.ViewModel(pillBackgroundColor: viewModel.calendarEvent.eventType.color, pillLabelText: viewModel.calendarEvent.eventType.rawValue))
+        eventTypePill.apply(viewModel: PillComponent.ViewModel(pillBackgroundColor: viewModel.calendarEvent.eventType.color, pillLabelText: viewModel.calendarEvent.eventType.rawValue, textColor: .white, shadowColor: viewModel.calendarEvent.eventType.color, shadowOpacity: 0.6, shadowRadius: 6.0))
         calendarEventTitleLabel.text = viewModel.calendarEvent.eventTitle
         
         calendarEventLocationLabel.isHidden = viewModel.calendarEvent.eventLocation == nil
@@ -105,6 +114,7 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
         
         calendarEventDescriptionLabel.isHidden = viewModel.calendarEvent.eventDescription == nil
         calendarEventDescriptionLabel.text = viewModel.calendarEvent.eventDescription
+        calendarEventDateLabel.text = viewModel.calendarEvent.date
     }
     
     func prepareForReuse() {
@@ -124,7 +134,7 @@ private extension CalendarEventTableCellComponent {
     
     func configureSubviews() {
         addSubview(cardView)
-        cardView.addSubviews(eventTypePill, moreButton, infoStack)
+        cardView.addSubviews(eventTypePill, moreButton, infoStack, calendarEventDateLabel)
         infoStack.addArrangedSubviews(calendarEventTitleLabel, calendarEventLocationLabel, calendarEventDescriptionLabel)
         infoStack.setCustomSpacing(Spacing.sixteen, after: calendarEventLocationLabel)
     }
@@ -144,10 +154,13 @@ private extension CalendarEventTableCellComponent {
             eventTypePill.topAnchor.constraint(equalTo: cardView.topAnchor, constant: Spacing.sixteen),
             eventTypePill.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: Spacing.sixteen),
             
-            infoStack.topAnchor.constraint(equalTo: eventTypePill.bottomAnchor, constant: Spacing.twentyFour),
+            infoStack.topAnchor.constraint(equalTo: eventTypePill.bottomAnchor, constant: Spacing.sixteen),
             infoStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: Spacing.sixteen),
             infoStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Spacing.sixteen),
-            infoStack.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -Spacing.twentyFour)
+            
+            calendarEventDateLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -Spacing.twentyFour),
+            calendarEventDateLabel.topAnchor.constraint(equalTo: infoStack.bottomAnchor, constant: Spacing.sixteen),
+            calendarEventDateLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Spacing.sixteen)
         ])
     }
 }

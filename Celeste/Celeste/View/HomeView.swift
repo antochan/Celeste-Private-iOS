@@ -61,7 +61,7 @@ class HomeView: UIView {
     let calendarView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelOrange, titleText: "Our Calendar", sectionStyle: .mainCard, image: #imageLiteral(resourceName: "People In Couple")))
+        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.lightPurplePastel, titleText: "Our Calendar", sectionStyle: .mainCard, image: #imageLiteral(resourceName: "People In Couple")))
         view.alpha = 0
         return view
     }()
@@ -69,7 +69,7 @@ class HomeView: UIView {
     let dailyChallengesView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.purple, titleText: "Daily\nChallenge", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Woman With Money")))
+        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelPink, titleText: "Daily\nChallenge", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Woman With Money")))
         view.alpha = 0
         return view
     }()
@@ -85,7 +85,7 @@ class HomeView: UIView {
     let photosGalleryView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelPink, titleText: "Photo Gallery", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Couple 3")))
+        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.purple, titleText: "Photo Gallery", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Couple 3")))
         view.alpha = 0
         return view
     }()
@@ -93,7 +93,7 @@ class HomeView: UIView {
     let randomThoughtsView: UIView = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelYellow, titleText: "Random\nThoughs", sectionStyle: .horizontalHalf, image: #imageLiteral(resourceName: "Character 34")))
+        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelYellow, titleText: "Random\nThoughts", sectionStyle: .horizontalHalf, image: #imageLiteral(resourceName: "Character 34")))
         view.alpha = 0
         return view
     }()
@@ -109,22 +109,22 @@ class HomeView: UIView {
     
     func appearAnimation() {
         userImage.fadeIn(duration: 0.3, delay: 0)
-        titleStack.fadeIn(duration: 0.3, delay: 0.2)
-        calendarView.fadeIn(duration: 0.3, delay: 0.4)
-        dailyChallengesView.fadeIn(duration: 0.3, delay: 0.6)
-        couponsView.fadeIn(duration: 0.3, delay: 0.8)
-        photosGalleryView.fadeIn(duration: 0.3, delay: 1.0)
-        randomThoughtsView.fadeIn(duration: 0.3, delay: 1.0)
+        titleStack.fadeIn(duration: 0.3, delay: 0.1)
+        calendarView.fadeIn(duration: 0.3, delay: 0.2)
+        dailyChallengesView.fadeIn(duration: 0.3, delay: 0.3)
+        couponsView.fadeIn(duration: 0.3, delay: 0.4)
+        photosGalleryView.fadeIn(duration: 0.3, delay: 0.5)
+        randomThoughtsView.fadeIn(duration: 0.3, delay: 0.6)
     }
     
     func handleDisappearAnimation(completion: @escaping (Bool) -> ()) {
         photosGalleryView.fadeOut(duration: 0.3, delay: 0)
-        randomThoughtsView.fadeOut(duration: 0.3, delay: 0)
+        randomThoughtsView.fadeOut(duration: 0.3, delay: 0.1)
         couponsView.fadeOut(duration: 0.3, delay: 0.2)
-        dailyChallengesView.fadeOut(duration: 0.3, delay: 0.4)
-        calendarView.fadeOut(duration: 0.3, delay: 0.6)
+        dailyChallengesView.fadeOut(duration: 0.3, delay: 0.3)
+        calendarView.fadeOut(duration: 0.3, delay: 0.4)
         
-        UIView.animate(withDuration: 0.3, delay: 0.8, options: UIView.AnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.5, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.titleStack.alpha = 0
             self.userImage.alpha = 0
         }, completion: { finished in

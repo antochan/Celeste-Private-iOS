@@ -47,6 +47,7 @@ extension UIColor {
         
         static let pastelOrange = UIColor(hexString: "#FFCCB4")
         static let purple = UIColor(hexString: "#E4DDF0")
+        static let lightPurplePastel = UIColor(hexString: "#EFE1EA")
         static let darkPastelPurple = UIColor(hexString: "#D5D8FF")
         static let pastelYellow = UIColor(hexString: "#FEEFD6")
         static let pastelPink = UIColor(hexString: "#FAE4E6")

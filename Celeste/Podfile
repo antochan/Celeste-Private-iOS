@@ -19,6 +19,9 @@ target 'Celeste' do
   pod 'Kingfisher', '~> 5.0'
   pod 'lottie-ios'
   pod 'SPStorkController'
+  pod 'TextFieldEffects'
+  pod 'IQKeyboardManager'
+  pod 'DropDown'
 
   target 'CelesteTests' do
     inherit! :search_paths

@@ -12,6 +12,10 @@ class PillComponent: UIView, Component {
     struct ViewModel {
         let pillBackgroundColor: UIColor
         let pillLabelText: String
+        let textColor: UIColor
+        let shadowColor: UIColor
+        let shadowOpacity: Float
+        let shadowRadius: CGFloat
     }
     
     private let shadowView: RoundedShadowView = {
@@ -25,8 +29,6 @@ class PillComponent: UIView, Component {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.mainMedium(size: 13)
-        
-        label.textColor = .white
         return label
     }()
     
@@ -41,9 +43,10 @@ class PillComponent: UIView, Component {
     
     func apply(viewModel: ViewModel) {
         shadowView.apply(viewModel: RoundedShadowView.ViewModel(backgroundColor: viewModel.pillBackgroundColor,
-                                                                shadowColor: viewModel.pillBackgroundColor,
-                                                                shadowOpacity: 0.6,
-                                                                shadowRadius: 7.0))
+                                                                shadowColor: viewModel.shadowColor,
+                                                                shadowOpacity: viewModel.shadowOpacity,
+                                                                shadowRadius: viewModel.shadowRadius))
+        pillLabel.textColor = viewModel.textColor
         pillLabel.text = viewModel.pillLabelText
     }
     
@@ -59,15 +62,14 @@ private extension PillComponent {
     
     func configureSubviews() {
         addSubviews(shadowView, pillLabel)
-        //shadowView.addSubview()
     }
     
     func configureLayout() {
         NSLayoutConstraint.activate([
-            shadowView.topAnchor.constraint(equalTo: topAnchor),
-            shadowView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            shadowView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            shadowView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            shadowView.topAnchor.constraint(equalTo: topAnchor, constant: Spacing.eight),
+            shadowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.four),
+            shadowView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.four),
+            shadowView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Spacing.eight),
             
             pillLabel.leadingAnchor.constraint(equalTo: shadowView.leadingAnchor, constant: Spacing.twelve),
             pillLabel.topAnchor.constraint(equalTo: shadowView.topAnchor, constant: Spacing.eight),

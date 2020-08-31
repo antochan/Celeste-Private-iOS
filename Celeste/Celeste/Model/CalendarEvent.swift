@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-enum EventType: String, Codable {
+enum EventType: String, Codable, CaseIterable {
     case food = "Food"
-    case altered = "Altered"
+    case altered = "Altered Carbon"
     case date = "Date"
     case specialDay = "Special Occasion"
     case random = "Random"

@@ -165,6 +165,7 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
   - CodableFirebase (0.2.1)
+  - DropDown (2.3.13)
   - Firebase/Analytics (6.21.0):
     - Firebase/Core
   - Firebase/Auth (6.21.0):
@@ -279,6 +280,7 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.3.1)
   - Hero (1.5.0)
+  - IQKeyboardManager (6.5.6)
   - Kingfisher (5.13.3):
     - Kingfisher/Core (= 5.13.3)
   - Kingfisher/Core (5.13.3)
@@ -293,9 +295,11 @@ PODS:
   - PromisesObjC (1.2.8)
   - SPStorkController (1.8.2)
   - SwiftyGif (5.3.0)
+  - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
   - CodableFirebase
+  - DropDown
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
@@ -303,17 +307,20 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - FSCalendar
   - Hero
+  - IQKeyboardManager
   - Kingfisher (~> 5.0)
   - lottie-ios
   - OTPTextField
   - SPStorkController
   - SwiftyGif
+  - TextFieldEffects
 
 SPEC REPOS:
   trunk:
     - abseil
     - BoringSSL-GRPC
     - CodableFirebase
+    - DropDown
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -334,6 +341,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - Hero
+    - IQKeyboardManager
     - Kingfisher
     - leveldb-library
     - lottie-ios
@@ -342,11 +350,13 @@ SPEC REPOS:
     - PromisesObjC
     - SPStorkController
     - SwiftyGif
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Firebase: f378c80340dd41c0ad0914af740c021eb282a04b
   FirebaseAnalytics: a1a0b3327ceb5cd5b4bacffdb293f6c909aa087d
   FirebaseAuth: a6da11d78dfd956b7f7af3222a0f0b1c93ef8fc9
@@ -367,6 +377,7 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
@@ -375,7 +386,8 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SPStorkController: d809adb3e333ec07760f8bf1b4c628a2801675ac
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 5d2ab0e82c53584ca79fc0ceaf448ff22f7e5a74
+PODFILE CHECKSUM: 01f3f6f9e04e7089effd51f172478d31a135fe1c
 
 COCOAPODS: 1.8.4
