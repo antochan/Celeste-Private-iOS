@@ -85,12 +85,15 @@ class AddCalendarEventViewController: UIViewController {
     }
     
     func postCalendarEvents(calendarEvents: [CalendarEvent]) {
+        addEventView.submitButton.isEnabled = false
         calendarServices.postCalendarEvents(calendarEvents: calendarEvents) { [weak self] success in
             guard let strongSelf = self else { return }
             if success {
+                strongSelf.addEventView.submitButton.isEnabled = true
                 strongSelf.delegate?.successfullyAdded()
                 strongSelf.dismiss(animated: true)
             } else {
+                strongSelf.addEventView.submitButton.isEnabled = true
                 strongSelf.displayAlert(message: "Oops, something went wrong please let anto know 402 error!", title: "Sorry!")
             }
         }

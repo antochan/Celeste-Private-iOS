@@ -9,6 +9,7 @@
 import UIKit
 import FSCalendar
 import SPStorkController
+import SPAlert
 
 class OurCalendarViewController: UIViewController {
     private let who: Who
@@ -311,6 +312,7 @@ extension OurCalendarViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension OurCalendarViewController: AddCalendarEventDelegate {
     func successfullyAdded() {
+        SPAlert.present(title: "Added Events", preset: .done)
         fetchEventsData()
     }
 }

@@ -293,6 +293,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - OTPTextField (1.1.2)
   - PromisesObjC (1.2.8)
+  - SPAlert (2.1.4)
   - SPStorkController (1.8.2)
   - SwiftyGif (5.3.0)
   - TextFieldEffects (1.6.0)
@@ -311,6 +312,7 @@ DEPENDENCIES:
   - Kingfisher (~> 5.0)
   - lottie-ios
   - OTPTextField
+  - SPAlert
   - SPStorkController
   - SwiftyGif
   - TextFieldEffects
@@ -348,6 +350,7 @@ SPEC REPOS:
     - nanopb
     - OTPTextField
     - PromisesObjC
+    - SPAlert
     - SPStorkController
     - SwiftyGif
     - TextFieldEffects
@@ -384,10 +387,11 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   OTPTextField: 40130474e5fc0ac07782fa0bed346c9e81854e1d
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SPAlert: 1a8afa1c6ac86a82ab5b2cfdf7f9a51e68cb6c0c
   SPStorkController: d809adb3e333ec07760f8bf1b4c628a2801675ac
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 01f3f6f9e04e7089effd51f172478d31a135fe1c
+PODFILE CHECKSUM: f05a8c8ad8b551b6d76d2d49f290049c455e2b8a
 
 COCOAPODS: 1.8.4
