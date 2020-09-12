@@ -95,11 +95,13 @@ extension ButtonComponent: HeightCalculatingComponent {
         public let style: Style
         public let text: String?
         public let icon: UIImage?
+        public let color: UIColor?
         
-        public init(style: Style, text: String?, icon: UIImage? = nil) {
+        public init(style: Style, text: String?, icon: UIImage? = nil, color: UIColor? = .black) {
             self.style = style
             self.text = text
             self.icon = icon
+            self.color = color
         }
     }
     
@@ -117,7 +119,7 @@ extension ButtonComponent: HeightCalculatingComponent {
         style = viewModel.style
         switch viewModel.style {
         case .primary:
-            applyPrimary(hasTitle: viewModel.text != nil, hasImage: viewModel.icon != nil)
+            applyPrimary(hasTitle: viewModel.text != nil, hasImage: viewModel.icon != nil, color: viewModel.color)
         case .secondary:
             applySecondary(hasTitle: viewModel.text != nil, hasImage: viewModel.icon != nil)
         case .minimal(let color):
@@ -182,8 +184,8 @@ private extension ButtonComponent {
         addTarget(self, action: #selector(didSelectButton), for: .primaryActionTriggered)
     }
     
-    func applyPrimary(hasTitle: Bool, hasImage: Bool) {
-        backgroundColor = UIColor.AppColors.black
+    func applyPrimary(hasTitle: Bool, hasImage: Bool, color: UIColor? = .black) {
+        backgroundColor = color
         titleLabel?.textColor = UIColor.AppColors.white
         apply(borderWidth: .none)
         setContentInsets(hasTitle: hasTitle,

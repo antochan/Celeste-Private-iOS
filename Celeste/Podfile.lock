@@ -234,6 +234,7 @@ PODS:
     - FirebaseCore (~> 6.6)
     - GTMSessionFetcher/Core (~> 1.1)
   - FSCalendar (2.8.1)
+  - FSPagerView (0.8.3)
   - GoogleAppMeasurement (6.4.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -307,6 +308,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseFirestoreSwift
   - FSCalendar
+  - FSPagerView
   - Hero
   - IQKeyboardManager
   - Kingfisher (~> 5.0)
@@ -335,6 +337,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseStorage
     - FSCalendar
+    - FSPagerView
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -372,6 +375,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
   FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GoogleAppMeasurement: 6e68a94d0eaeb1d73ef6b0ed4f7334e29d63ae29
   GoogleDataTransport: b29a21d813e906014ca16c00897827e40e4a24ab
   GoogleDataTransportCCTSupport: 6f15a89b0ca35d6fa523e1f752ef818588885988
@@ -392,6 +396,6 @@ SPEC CHECKSUMS:
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: f05a8c8ad8b551b6d76d2d49f290049c455e2b8a
+PODFILE CHECKSUM: de5a980a0c11b42c5dd17788166049a6ae27f2f4
 
 COCOAPODS: 1.8.4

@@ -28,6 +28,7 @@ class OurCalendarViewController: UIViewController {
             updateCalendarTableEventsData()
         }
     }
+    
     private var calendarEventsTableData: [CalendarEvent] = [] {
         didSet {
             calendarView.calendarTableView.reloadData()

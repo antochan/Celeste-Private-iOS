@@ -53,6 +53,11 @@ class HomeViewController: UIViewController {
                 }
             }
         }
+        
+        homeView.couponsView.actions = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.presentCoupon(who: strongSelf.who)
+        }
     }
     
     func presentCalendar(who: Who) {
@@ -62,6 +67,13 @@ class HomeViewController: UIViewController {
         present(calendarViewController, animated: true) {
             calendarViewController.presented = true
         }
+    }
+    
+    func presentCoupon(who: Who) {
+        let couponViewController = CouponsViewController(who: who, couponServices: CouponServices())
+        couponViewController.modalPresentationStyle = .fullScreen
+        couponViewController.isHeroEnabled = true
+        present(couponViewController, animated: true)
     }
     
     @objc func userImageTapped() {

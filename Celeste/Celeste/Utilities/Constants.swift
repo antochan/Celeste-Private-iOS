@@ -8,9 +8,9 @@
 
 import UIKit
 
-public enum Who {
-    case lauren
-    case antonio
+public enum Who: String {
+    case lauren = "Lauren"
+    case antonio = "Antonio"
 }
 
 public enum HeroConstants {
@@ -31,6 +31,7 @@ public enum Spacing {
     public static let sixteen: CGFloat = 16
     public static let twentyFour: CGFloat = 24
     public static let thirtyTwo: CGFloat = 32
+    public static let forty: CGFloat = 40
     public static let fortyEight: CGFloat = 48
 }
 
@@ -114,5 +115,10 @@ enum Result<T> {
 
 enum CalendarFailures: resultFailures {
     case calendarDataError(Error)
+    case decodingError(_ message: String)
+}
+
+enum CouponFailures: resultFailures {
+    case couponDataError(Error)
     case decodingError(_ message: String)
 }

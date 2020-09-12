@@ -19,6 +19,9 @@
 		8A106D7324E2474500BE8D34 /* WhoThisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A106D7224E2474500BE8D34 /* WhoThisView.swift */; };
 		8A106D7624E24A3000BE8D34 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A106D7524E24A3000BE8D34 /* Fonts.swift */; };
 		8A106D7824E24A4800BE8D34 /* Bellefair-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A106D7724E24A4700BE8D34 /* Bellefair-Regular.ttf */; };
+		8A3CC6F524FDFDA70036DAAA /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CC6F424FDFDA70036DAAA /* CouponsViewController.swift */; };
+		8A3CC6F724FDFDB30036DAAA /* CouponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CC6F624FDFDB30036DAAA /* CouponsView.swift */; };
+		8A7490252500C0F400427F08 /* CouponsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7490242500C0F400427F08 /* CouponsCollectionCell.swift */; };
 		8A7FD84A24E24F6F0057F3C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD84924E24F6F0057F3C5 /* Extensions.swift */; };
 		8A7FD84C24E250C90057F3C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD84B24E250C90057F3C5 /* Constants.swift */; };
 		8A7FD84F24E2575C0057F3C5 /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD84E24E2575C0057F3C5 /* UserComponent.swift */; };
@@ -29,6 +32,7 @@
 		8A7FD85E24E258040057F3C5 /* ComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */; };
 		8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */; };
 		8A7FD86024E258040057F3C5 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */; };
+		8A95B76C250CA85B005BFE52 /* CouponServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95B76B250CA85B005BFE52 /* CouponServices.swift */; };
 		8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A024E785E900442B80 /* HomeViewController.swift */; };
 		8A9A92A324E785F600442B80 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A224E785F600442B80 /* HomeView.swift */; };
 		8A9A92A524E8792900442B80 /* HomeSectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */; };
@@ -40,6 +44,7 @@
 		8A9F1D7724FBAAE5000B203A /* AddCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */; };
 		8A9F1D7924FBAD73000B203A /* AddCalendarEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */; };
 		8A9F1D7B24FC2675000B203A /* PillComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F1D7A24FC2675000B203A /* PillComponent.swift */; };
+		8AAF97F82509F87C00758CD3 /* Coupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF97F72509F87C00758CD3 /* Coupons.swift */; };
 		8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4224E2718D00582C74 /* OTPView.swift */; };
 		8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4424E2719900582C74 /* OTPViewController.swift */; };
 		8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB59B4624E3BEEC00582C74 /* MainView.swift */; };
@@ -96,6 +101,9 @@
 		8A106D7224E2474500BE8D34 /* WhoThisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoThisView.swift; sourceTree = "<group>"; };
 		8A106D7524E24A3000BE8D34 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8A106D7724E24A4700BE8D34 /* Bellefair-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bellefair-Regular.ttf"; sourceTree = "<group>"; };
+		8A3CC6F424FDFDA70036DAAA /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		8A3CC6F624FDFDB30036DAAA /* CouponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsView.swift; sourceTree = "<group>"; };
+		8A7490242500C0F400427F08 /* CouponsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsCollectionCell.swift; sourceTree = "<group>"; };
 		8A7FD84924E24F6F0057F3C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8A7FD84B24E250C90057F3C5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A7FD84E24E2575C0057F3C5 /* UserComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 		8A7FD85B24E258040057F3C5 /* ComponentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentTableViewCell.swift; sourceTree = "<group>"; };
 		8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		8A95B76B250CA85B005BFE52 /* CouponServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponServices.swift; sourceTree = "<group>"; };
 		8A9A92A024E785E900442B80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A9A92A224E785F600442B80 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionComponent.swift; sourceTree = "<group>"; };
@@ -117,6 +126,7 @@
 		8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarEventViewController.swift; sourceTree = "<group>"; };
 		8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarEventView.swift; sourceTree = "<group>"; };
 		8A9F1D7A24FC2675000B203A /* PillComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillComponent.swift; sourceTree = "<group>"; };
+		8AAF97F72509F87C00758CD3 /* Coupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons.swift; sourceTree = "<group>"; };
 		8AB59B4224E2718D00582C74 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		8AB59B4424E2719900582C74 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		8AB59B4624E3BEEC00582C74 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -255,6 +265,7 @@
 				8A9A92A024E785E900442B80 /* HomeViewController.swift */,
 				8A9A92A824E9079800442B80 /* OurCalendarViewController.swift */,
 				8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */,
+				8A3CC6F424FDFDA70036DAAA /* CouponsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +280,7 @@
 				8A9A92A224E785F600442B80 /* HomeView.swift */,
 				8A9A92A624E8D6BC00442B80 /* OurCalendarView.swift */,
 				8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */,
+				8A3CC6F624FDFDB30036DAAA /* CouponsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +312,7 @@
 				8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */,
 				8ABA5BD424EA560200A405F9 /* OurCalendarCell.swift */,
 				8ABA5BD924EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift */,
+				8A7490242500C0F400427F08 /* CouponsCollectionCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -320,6 +333,7 @@
 			children = (
 				8A9F1D7224FB8134000B203A /* CollectionReferences.swift */,
 				8A9F1D7424FB8232000B203A /* CalendarServices.swift */,
+				8A95B76B250CA85B005BFE52 /* CouponServices.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -328,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				8ABA5BD724EB501400A405F9 /* CalendarEvent.swift */,
+				8AAF97F72509F87C00758CD3 /* Coupons.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -585,6 +600,7 @@
 				8A7FD85724E257D90057F3C5 /* PressHighlightable.swift in Sources */,
 				8A106D3F24E2445F00BE8D34 /* AppDelegate.swift in Sources */,
 				8ABA5BD824EB501400A405F9 /* CalendarEvent.swift in Sources */,
+				8A3CC6F524FDFDA70036DAAA /* CouponsViewController.swift in Sources */,
 				8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */,
 				8ADE68E524E6787E00C4E3EE /* LaunchScreenView.swift in Sources */,
 				8AB59B4924E3BEF600582C74 /* MainViewController.swift in Sources */,
@@ -593,6 +609,8 @@
 				8A7FD84A24E24F6F0057F3C5 /* Extensions.swift in Sources */,
 				8A9A92A524E8792900442B80 /* HomeSectionComponent.swift in Sources */,
 				8AB59B4324E2718D00582C74 /* OTPView.swift in Sources */,
+				8AAF97F82509F87C00758CD3 /* Coupons.swift in Sources */,
+				8A3CC6F724FDFDB30036DAAA /* CouponsView.swift in Sources */,
 				8A9F1D7324FB8134000B203A /* CollectionReferences.swift in Sources */,
 				8A7FD85924E257D90057F3C5 /* PressScalable.swift in Sources */,
 				8A9A92A324E785F600442B80 /* HomeView.swift in Sources */,
@@ -600,6 +618,7 @@
 				8A106D7024E2471400BE8D34 /* WhoThisViewController.swift in Sources */,
 				8A7FD84C24E250C90057F3C5 /* Constants.swift in Sources */,
 				8A7FD85824E257D90057F3C5 /* Components.swift in Sources */,
+				8A7490252500C0F400427F08 /* CouponsCollectionCell.swift in Sources */,
 				8ABA5BDA24EB8FEB00A405F9 /* CalendarEventTableCellComponent.swift in Sources */,
 				8A9F1D7B24FC2675000B203A /* PillComponent.swift in Sources */,
 				8A106D7324E2474500BE8D34 /* WhoThisView.swift in Sources */,
@@ -608,6 +627,7 @@
 				8A7FD85E24E258040057F3C5 /* ComponentTableViewCell.swift in Sources */,
 				8AB59B4524E2719900582C74 /* OTPViewController.swift in Sources */,
 				8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */,
+				8A95B76C250CA85B005BFE52 /* CouponServices.swift in Sources */,
 				8A106D4124E2445F00BE8D34 /* SceneDelegate.swift in Sources */,
 				8ADE68E124E6709D00C4E3EE /* RoundedShadowView.swift in Sources */,
 			);

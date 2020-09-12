@@ -23,6 +23,7 @@ target 'Celeste' do
   pod 'IQKeyboardManager'
   pod 'DropDown'
   pod 'SPAlert'
+  pod 'FSPagerView'
 
   target 'CelesteTests' do
     inherit! :search_paths

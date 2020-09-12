@@ -52,5 +52,14 @@ extension UIColor {
         static let pastelYellow = UIColor(hexString: "#FEEFD6")
         static let pastelPink = UIColor(hexString: "#FAE4E6")
         static let pastelRed = UIColor(hexString: "#ff6961")
+        
+        static let koalaOne = UIColor(hexString: "#D9C7FF")
+        static let koalaTwo = UIColor(hexString: "#D2BDFF")
+        static let koalaThree = UIColor(hexString: "#E6DAFF")
+        static let koalaFour = UIColor(hexString: "#D9EEFF")
+        static let koalaRedeemButtonColor = UIColor(hexString: "#5D54C1")
+        
+        static let koalaInnerCircleColor = UIColor(hexString: "#D9EEFF")
+        static let couponShadowColor = UIColor(hexString: "#AACCE6")
     }
 }
