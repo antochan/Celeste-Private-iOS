@@ -28,4 +28,20 @@ extension UIFont {
     class func mainMedium(size: CGFloat) -> UIFont {
         return UIFont(name: "HelveticaNeue-Medium", size: size)!
     }
+    
+    class func caros(size: CGFloat) -> UIFont {
+        return UIFont(name: "CarosSoftLight", size: size)!
+    }
+    
+    class func carosMedium(size: CGFloat) -> UIFont {
+        return UIFont(name: "CarosSoft", size: size)!
+    }
+    
+    class func carosLight(size: CGFloat) -> UIFont {
+        return UIFont(name: "CarosSoftLight", size: size)!
+    }
+    
+    class func carosExtraLight(size: CGFloat) -> UIFont {
+        return UIFont(name: "CarosSoftExtraLight", size: size)!
+    }
 }

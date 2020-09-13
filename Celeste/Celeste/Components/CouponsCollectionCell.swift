@@ -33,7 +33,7 @@ class CouponsCollectionCell: FSPagerViewCell {
     
     private let couponTitle: UILabel = {
         let label = UILabel()
-        label.font = UIFont.mainMedium(size: 22)
+        label.font = .carosMedium(size: 22)
         label.textAlignment = .center
         label.numberOfLines = 2
         return label
@@ -41,7 +41,7 @@ class CouponsCollectionCell: FSPagerViewCell {
     
     private let couponDescription: UILabel = {
         let label = UILabel()
-        label.font = UIFont.main(size: 15)
+        label.font = .caros(size: 14)
         label.textAlignment = .center
         label.numberOfLines = 5
         return label

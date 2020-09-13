@@ -80,7 +80,7 @@ class AddCalendarEventViewController: UIViewController {
         let appearance = DropDown.appearance()
         appearance.backgroundColor = UIColor.AppColors.beige
         appearance.selectionBackgroundColor = UIColor.AppColors.beige
-        appearance.textFont = UIFont.main(size: 15)
+        appearance.textFont = .caros(size: 14)
         appearance.cornerRadius = 12
     }
     

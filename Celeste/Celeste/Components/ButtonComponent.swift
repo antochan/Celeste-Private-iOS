@@ -173,7 +173,7 @@ extension ButtonComponent: SizeCalculatingComponent {
 private extension ButtonComponent {
     
     enum Constants {
-        static let font = UIFont.bellefair(size: 16)
+        static let font = UIFont.caros(size: 15)
         static let iconPadding: CGFloat = Spacing.eight
     }
     

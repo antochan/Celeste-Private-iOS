@@ -28,7 +28,7 @@ class WhoThisView: UIView {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
         label.text = "Who Dis?"
-        label.font = .bellefair(size: 35)
+        label.font = .caros(size: 34)
         label.alpha = 0
         return label
     }()
@@ -37,7 +37,7 @@ class WhoThisView: UIView {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
         label.text = "Hello and welcome to Celeste! The digital scratchbook just for us HEH! Choose below who is using the app right now, if your name isn't there then... leave!"
-        label.font = .bellefair(size: 18)
+        label.font = .caros(size: 17)
         label.numberOfLines = 0
         label.alpha = 0
         return label

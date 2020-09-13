@@ -29,7 +29,7 @@ class OTPView: UIView {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .bellefair(size: 35)
+        label.font = .caros(size: 34)
         label.alpha = 0
         return label
     }()
@@ -38,7 +38,7 @@ class OTPView: UIView {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .bellefair(size: 18)
+        label.font = .caros(size: 17)
         label.numberOfLines = 0
         label.alpha = 0
         return label
@@ -49,7 +49,7 @@ class OTPView: UIView {
         field.translatesAutoresizingMaskIntoConstraints = false
         field.placeholderColor = UIColor.AppColors.black
         field.spacing = Spacing.sixteen
-        field.font = UIFont.bellefair(size: 28)
+        field.font = .caros(size: 27)
         field.alpha = 0
         return field
     }()
@@ -67,7 +67,7 @@ class OTPView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .red
-        label.font = .bellefair(size: 14)
+        label.font = .caros(size: 13)
         label.numberOfLines = 0
         label.isHidden = true
         return label

@@ -132,7 +132,7 @@ extension UIViewController {
         loadingLabel.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
         loadingLabel.textAlignment = .center
         loadingLabel.text = loadingText
-        loadingLabel.font = UIFont.mainMedium(size: 18)
+        loadingLabel.font = .carosMedium(size: 18)
         loadingLabel.center = CGPoint(x: animationView.center.x, y: animationView.center.y + 50)
         
         animationView.play()

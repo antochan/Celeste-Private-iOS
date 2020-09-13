@@ -32,7 +32,7 @@ class MainView: UIView {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
         label.text = "You've been trapped for..."
-        label.font = .bellefair(size: 16)
+        label.font = .caros(size: 15)
         label.textAlignment = .center
         return label
     }()
@@ -40,7 +40,7 @@ class MainView: UIView {
     let subtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.AppColors.black
-        label.font = .bellefair(size: 42)
+        label.font = .caros(size: 41)
         label.textAlignment = .center
         label.isUserInteractionEnabled = true
         label.adjustsFontSizeToFitWidth = true

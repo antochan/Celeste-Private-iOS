@@ -28,7 +28,7 @@ class PillComponent: UIView, Component {
     private let pillLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.mainMedium(size: 13)
+        label.font = .carosMedium(size: 13)
         return label
     }()
     

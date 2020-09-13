@@ -45,7 +45,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.AppColors.black
-        label.font = .main(size: 20)
+        label.font = .caros(size: 18)
         return label
     }()
     
@@ -54,7 +54,7 @@ class HomeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.AppColors.black
         label.text = "Welcome Back"
-        label.font = .mainMedium(size: 24)
+        label.font = .carosMedium(size: 22)
         return label
     }()
     

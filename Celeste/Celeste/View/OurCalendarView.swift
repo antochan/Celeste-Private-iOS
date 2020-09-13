@@ -45,7 +45,7 @@ class OurCalendarView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "There are no events from the selected dates yet! Feel free to add one or select other dates :)"
-        label.font = UIFont.bellefair(size: 16)
+        label.font = .caros(size: 15)
         label.textAlignment = .center
         label.textColor = .lightGray
         label.numberOfLines = 0

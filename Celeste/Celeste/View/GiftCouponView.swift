@@ -13,7 +13,7 @@ class GiftCouponView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.mainMedium(size: 22)
+        label.font = .carosMedium(size: 21)
         label.textColor = UIColor.AppColors.black
         label.text = "Gift a Coupon"
         label.textAlignment = .center
@@ -25,7 +25,7 @@ class GiftCouponView: UIView {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderInactiveColor = .gray
         textfield.borderActiveColor = .black
-        textfield.font = UIFont.main(size: 16)
+        textfield.font = .caros(size: 15)
         textfield.placeholder = "Coupon Title"
         textfield.placeholderColor = .gray
         return textfield
@@ -36,7 +36,7 @@ class GiftCouponView: UIView {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderInactiveColor = .gray
         textfield.borderActiveColor = .black
-        textfield.font = UIFont.main(size: 16)
+        textfield.font = .caros(size: 15)
         textfield.placeholder = "Coupon Description"
         textfield.placeholderColor = .gray
         return textfield

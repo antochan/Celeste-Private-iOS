@@ -80,15 +80,15 @@ class HomeSectionComponent: UIView, Component, Pressable {
         case .horizontalHalf:
             imageView.widthAnchor.constraint(equalTo: cardView.widthAnchor, multiplier: 0.5).isActive = true
             imageView.heightAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: 0.8).isActive = true
-            titleLabel.font = .mainMedium(size: 14)
+            titleLabel.font = .carosMedium(size: 15)
         case .verticalHalf:
             imageView.widthAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: 0.5).isActive = true
             imageView.heightAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: 0.7).isActive = true
-            titleLabel.font = .mainMedium(size: 14)
+            titleLabel.font = .carosMedium(size: 15)
         case .mainCard:
             imageView.widthAnchor.constraint(equalTo: cardView.widthAnchor, multiplier: 0.5).isActive = true
             imageView.heightAnchor.constraint(equalTo: cardView.heightAnchor).isActive = true
-            titleLabel.font = .mainMedium(size: 18)
+            titleLabel.font = .carosMedium(size: 15)
         }
     }
 }

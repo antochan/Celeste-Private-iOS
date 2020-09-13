@@ -14,7 +14,7 @@ class AddCalendarEventView: UIView {
     private let selectedDatesTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.mainMedium(size: 15)
+        label.font = .carosMedium(size: 15)
         label.textColor = UIColor.AppColors.black
         label.text = "Selected Dates"
         return label
@@ -41,7 +41,7 @@ class AddCalendarEventView: UIView {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderInactiveColor = .gray
         textfield.borderActiveColor = .black
-        textfield.font = UIFont.main(size: 16)
+        textfield.font = .caros(size: 15)
         textfield.placeholder = "Event Name (Required)"
         textfield.placeholderColor = .gray
         return textfield
@@ -52,7 +52,7 @@ class AddCalendarEventView: UIView {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderInactiveColor = .gray
         textfield.borderActiveColor = .black
-        textfield.font = UIFont.main(size: 16)
+        textfield.font = .caros(size: 15)
         textfield.placeholder = "Event Location (Optional)"
         textfield.placeholderColor = .gray
         return textfield
@@ -63,7 +63,7 @@ class AddCalendarEventView: UIView {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderInactiveColor = .gray
         textfield.borderActiveColor = .black
-        textfield.font = UIFont.main(size: 16)
+        textfield.font = .caros(size: 15)
         textfield.placeholder = "Event Type (Required)"
         textfield.placeholderColor = .gray
         return textfield
@@ -80,7 +80,7 @@ class AddCalendarEventView: UIView {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.borderInactiveColor = .gray
         textfield.borderActiveColor = .black
-        textfield.font = UIFont.main(size: 16)
+        textfield.font = .caros(size: 15)
         textfield.placeholder = "Event Description (Optional)"
         textfield.placeholderColor = .gray
         return textfield

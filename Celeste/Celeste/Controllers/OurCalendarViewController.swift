@@ -113,11 +113,11 @@ class OurCalendarViewController: UIViewController {
         calendarView.calendarView.allowsMultipleSelection = true
         calendarView.calendarView.register(OurCalendarCell.self, forCellReuseIdentifier: "CalendarCell")
         calendarView.calendarView.appearance.headerTitleColor = UIColor.AppColors.black
-        calendarView.calendarView.appearance.headerTitleFont = UIFont.mainMedium(size: 22)
-        calendarView.calendarView.appearance.weekdayFont = UIFont.main(size: 13)
+        calendarView.calendarView.appearance.headerTitleFont = .carosMedium(size: 22)
+        calendarView.calendarView.appearance.weekdayFont = .caros(size: 12)
         calendarView.calendarView.appearance.weekdayTextColor = .lightGray
         calendarView.calendarView.placeholderType = .none
-        calendarView.calendarView.appearance.titleFont = UIFont.main(size: 14)
+        calendarView.calendarView.appearance.titleFont = .caros(size: 13)
         calendarView.calendarView.appearance.titleTodayColor = .black
         calendarView.calendarView.appearance.headerMinimumDissolvedAlpha = 0
         calendarView.calendarView.appearance.caseOptions = .weekdayUsesSingleUpperCase

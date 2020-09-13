@@ -23,6 +23,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Bellefair-Regular.ttf</string>
+		<string>CarosSoftExtraLight.otf</string>
+		<string>CarosSoft.otf</string>
+		<string>CarosSoftMedium.otf</string>
+		<string>CarosSoftLight.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

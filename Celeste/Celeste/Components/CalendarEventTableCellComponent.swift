@@ -51,7 +51,7 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
-        label.font = UIFont.mainMedium(size: 18)
+        label.font = .carosMedium(size: 18)
         label.textColor = UIColor.AppColors.black
         return label
     }()
@@ -60,7 +60,7 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
-        label.font = UIFont.main(size: 15)
+        label.font = .caros(size: 14)
         label.textColor = .gray
         return label
     }()
@@ -69,7 +69,7 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.main(size: 12)
+        label.font = .caros(size: 11)
         label.textColor = UIColor.AppColors.black
         return label
     }()
@@ -78,7 +78,7 @@ class CalendarEventTableCellComponent: UIView, Component, Reusable, Pressable {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
-        label.font = UIFont.main(size: 12)
+        label.font = .caros(size: 11)
         label.textColor = .lightGray
         return label
     }()
