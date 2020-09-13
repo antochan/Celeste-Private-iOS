@@ -33,6 +33,9 @@
 		8A7FD85F24E258040057F3C5 /* ComponentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */; };
 		8A7FD86024E258040057F3C5 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */; };
 		8A95B76C250CA85B005BFE52 /* CouponServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95B76B250CA85B005BFE52 /* CouponServices.swift */; };
+		8A95B76E250D72DA005BFE52 /* GiftCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95B76D250D72DA005BFE52 /* GiftCouponViewController.swift */; };
+		8A95B770250D72EC005BFE52 /* GiftCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95B76F250D72EC005BFE52 /* GiftCouponView.swift */; };
+		8A95B772250D9540005BFE52 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A95B771250D9540005BFE52 /* Loader.json */; };
 		8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A024E785E900442B80 /* HomeViewController.swift */; };
 		8A9A92A324E785F600442B80 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A224E785F600442B80 /* HomeView.swift */; };
 		8A9A92A524E8792900442B80 /* HomeSectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */; };
@@ -115,6 +118,9 @@
 		8A7FD85C24E258040057F3C5 /* ComponentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A7FD85D24E258040057F3C5 /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		8A95B76B250CA85B005BFE52 /* CouponServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponServices.swift; sourceTree = "<group>"; };
+		8A95B76D250D72DA005BFE52 /* GiftCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCouponViewController.swift; sourceTree = "<group>"; };
+		8A95B76F250D72EC005BFE52 /* GiftCouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCouponView.swift; sourceTree = "<group>"; };
+		8A95B771250D9540005BFE52 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
 		8A9A92A024E785E900442B80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A9A92A224E785F600442B80 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionComponent.swift; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 				8A9A92A824E9079800442B80 /* OurCalendarViewController.swift */,
 				8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */,
 				8A3CC6F424FDFDA70036DAAA /* CouponsViewController.swift */,
+				8A95B76D250D72DA005BFE52 /* GiftCouponViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +288,7 @@
 				8A9A92A624E8D6BC00442B80 /* OurCalendarView.swift */,
 				8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */,
 				8A3CC6F624FDFDB30036DAAA /* CouponsView.swift */,
+				8A95B76F250D72EC005BFE52 /* GiftCouponView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 		8A106D7424E24A2500BE8D34 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8A95B771250D9540005BFE52 /* Loader.json */,
 				8ADE68F224E6840200C4E3EE /* CELESTE.gif */,
 				8A106D7724E24A4700BE8D34 /* Bellefair-Regular.ttf */,
 				8A106D7524E24A3000BE8D34 /* Fonts.swift */,
@@ -457,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A106D7824E24A4800BE8D34 /* Bellefair-Regular.ttf in Resources */,
+				8A95B772250D9540005BFE52 /* Loader.json in Resources */,
 				8ADE68F324E6840200C4E3EE /* CELESTE.gif in Resources */,
 				8A9F1D7024FB7C70000B203A /* GoogleService-Info.plist in Resources */,
 				8A106D4B24E2446100BE8D34 /* LaunchScreen.storyboard in Resources */,
@@ -588,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A95B770250D72EC005BFE52 /* GiftCouponView.swift in Sources */,
 				8ABA5BD524EA560200A405F9 /* OurCalendarCell.swift in Sources */,
 				8A9F1D7924FBAD73000B203A /* AddCalendarEventView.swift in Sources */,
 				8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */,
@@ -602,6 +613,7 @@
 				8ABA5BD824EB501400A405F9 /* CalendarEvent.swift in Sources */,
 				8A3CC6F524FDFDA70036DAAA /* CouponsViewController.swift in Sources */,
 				8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */,
+				8A95B76E250D72DA005BFE52 /* GiftCouponViewController.swift in Sources */,
 				8ADE68E524E6787E00C4E3EE /* LaunchScreenView.swift in Sources */,
 				8AB59B4924E3BEF600582C74 /* MainViewController.swift in Sources */,
 				8A7FD85A24E257D90057F3C5 /* Pressable.swift in Sources */,

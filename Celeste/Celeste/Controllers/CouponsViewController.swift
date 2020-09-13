@@ -8,13 +8,15 @@
 
 import UIKit
 import FSPagerView
+import SPStorkController
+import SPAlert
 
 class CouponsViewController: UIViewController {
     let couponView = CouponsView()
     private let who: Who
     private let couponServices: CouponServices
     
-    private var coupons: [Coupon] = [Coupon(title: "Fetching Coupons", description: "Currently fetching your coupons from the server ;) Please give it a second to load in all your coupons", redeemed: nil)] {
+    private var coupons: [Coupon] = [Coupon(id: "123", title: "Fetching Coupons", description: "Currently fetching your coupons from the server ;) Please give it a second to load in all your coupons", redeemed: nil)] {
         didSet {
             couponView.couponsCarousel.reloadData()
         }
@@ -35,16 +37,7 @@ class CouponsViewController: UIViewController {
         super.loadView()
         view = couponView
     }
-    
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//          return .lightContent
-//    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setGradientBackground()
-        super.viewWillAppear(animated)
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         couponView.appearAnimation()
@@ -69,26 +62,45 @@ class CouponsViewController: UIViewController {
         }
     }
     
+    func redeemCoupon(who: Who, coupon: Coupon) {
+        let sv = UIViewController.displaySpinner(onView: couponView, loadingText: "Redeeming..")
+        couponServices.redeemCoupon(who: who, coupon: coupon) { [weak self] success in
+            guard let strongSelf = self else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                UIViewController.removeSpinner(spinner: sv)
+            })
+            if success {
+                strongSelf.fetchCoupons(who: who)
+            } else {
+                strongSelf.displayAlert(message: "Something went wrong redeeming this coupon, let anto know :(", title: "Oops!")
+            }
+        }
+    }
+    
     func configureActions() {
         couponView.closeButton.actions = { [weak self] action in
             guard let strongSelf = self else { return }
             strongSelf.dismiss(animated: true)
         }
+        
+        couponView.giftButton.actions = { [weak self] action in
+            guard let strongSelf = self else { return }
+            let giftCouponViewController = GiftCouponViewController(couponServices: strongSelf.couponServices, who: strongSelf.who)
+            giftCouponViewController.delegate = self
+            let transitionDelegate = SPStorkTransitioningDelegate()
+            transitionDelegate.customHeight = 450
+            giftCouponViewController.transitioningDelegate = transitionDelegate
+            giftCouponViewController.modalPresentationStyle = .custom
+            giftCouponViewController.modalPresentationCapturesStatusBarAppearance = true
+            strongSelf.present(giftCouponViewController, animated: true, completion: nil)
+        }
     }
     
     func configureCarousel() {
         couponView.couponsCarousel.register(CouponsCollectionCell.self, forCellWithReuseIdentifier: "CouponsCell")
-        couponView.couponsCarousel.transformer = FSPagerViewTransformer(type: .zoomOut)
+        couponView.couponsCarousel.transformer = FSPagerViewTransformer(type: .linear)
         couponView.couponsCarousel.delegate = self
         couponView.couponsCarousel.dataSource = self
-    }
-    
-    func setGradientBackground() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.AppColors.koalaOne.cgColor, UIColor.AppColors.koalaTwo.cgColor, UIColor.AppColors.koalaThree.cgColor, UIColor.AppColors.koalaFour.cgColor]
-        gradientLayer.locations = [0.0, 0.2, 0.4, 0.6, 1.0]
-        gradientLayer.frame = couponView.bounds
-        couponView.layer.insertSublayer(gradientLayer, at: 0)
     }
 
 }
@@ -103,6 +115,18 @@ extension CouponsViewController: FSPagerViewDelegate, FSPagerViewDataSource {
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "CouponsCell", at: index) as! CouponsCollectionCell
         cell.apply(coupon: coupons[index])
+        cell.actions = { [weak self] coupon in
+            guard let strongSelf = self, let coupon = coupon else { return }
+            strongSelf.redeemCoupon(who: strongSelf.who, coupon: coupon)
+        }
         return cell
+    }
+}
+
+//MARK: - GiftCouponDelegate
+
+extension CouponsViewController: GiftCouponDelegate {
+    func successfullyGifted() {
+        SPAlert.present(title: "Sent Over Coupon!", preset: .done)
     }
 }

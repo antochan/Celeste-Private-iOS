@@ -13,6 +13,7 @@ class CircularImageButton: UIView, Component {
         var image: UIImage? = nil
         let backgroundColor: UIColor = UIColor.AppColors.white
         let dimensions: CGFloat
+        let imageDimensions: CGFloat
     }
     
     public var actions: Actions?
@@ -49,6 +50,9 @@ class CircularImageButton: UIView, Component {
         circleView.heightAnchor.constraint(equalToConstant: viewModel.dimensions).isActive = true
         circleView.widthAnchor.constraint(equalToConstant: viewModel.dimensions).isActive = true
         circleView.layer.cornerRadius = viewModel.dimensions / 2
+        
+        imageView.heightAnchor.constraint(equalToConstant: viewModel.imageDimensions).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: viewModel.imageDimensions).isActive = true
     }
     
 }
@@ -75,10 +79,8 @@ private extension CircularImageButton {
             circleView.trailingAnchor.constraint(equalTo: trailingAnchor),
             circleView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            imageView.topAnchor.constraint(equalTo: circleView.topAnchor, constant: Spacing.twelve),
-            imageView.bottomAnchor.constraint(equalTo: circleView.bottomAnchor, constant: -Spacing.twelve),
-            imageView.leadingAnchor.constraint(equalTo: circleView.leadingAnchor, constant: Spacing.twelve),
-            imageView.trailingAnchor.constraint(equalTo: circleView.trailingAnchor, constant: -Spacing.twelve)
+            imageView.centerYAnchor.constraint(equalTo: circleView.centerYAnchor),
+            imageView.centerXAnchor.constraint(equalTo: circleView.centerXAnchor),
         ])
     }
     

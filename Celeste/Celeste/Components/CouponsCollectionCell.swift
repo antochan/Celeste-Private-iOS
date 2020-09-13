@@ -10,6 +10,9 @@ import UIKit
 import FSPagerView
 
 class CouponsCollectionCell: FSPagerViewCell {
+    public var actions: Actions?
+    private var coupon: Coupon?
+    
     private let cardView: RoundedShadowView = {
         let card = RoundedShadowView()
         card.translatesAutoresizingMaskIntoConstraints = false
@@ -60,6 +63,7 @@ class CouponsCollectionCell: FSPagerViewCell {
     }
     
     func apply(coupon: Coupon) {
+        self.coupon = coupon
         couponTitle.text = coupon.title
         couponDescription.text = coupon.description
         if let redeemed = coupon.redeemed {
@@ -70,11 +74,14 @@ class CouponsCollectionCell: FSPagerViewCell {
                 redeemButton.apply(viewModel: ButtonComponent.ViewModel(style: .primary, text: "Redeem", color: UIColor.AppColors.koalaRedeemButtonColor))
             }
         } else {
-            redeemButton.apply(viewModel: ButtonComponent.ViewModel(style: .primary, text: "Loading...", color: .black))
+            redeemButton.apply(viewModel: ButtonComponent.ViewModel(style: .primary, text: "Loading...", color: UIColor.AppColors.koalaRedeemButtonColor))
             redeemButton.isEnabled = false
         }
     }
     
+    @objc func redeemTapped() {
+        actions?(coupon)
+    }
 }
 
 //MARK: - Private
@@ -89,6 +96,7 @@ private extension CouponsCollectionCell {
         addSubviews(cardView)
         cardView.addSubviews(couponTextStack, redeemButton)
         couponTextStack.addArrangedSubviews(couponTitle, couponDescription, UIView())
+        redeemButton.addTarget(self, action: #selector(redeemTapped), for: .touchUpInside)
     }
 
     func configureLayout() {
@@ -108,4 +116,9 @@ private extension CouponsCollectionCell {
             redeemButton.heightAnchor.constraint(lessThanOrEqualToConstant: 35)
         ])
     }
+}
+
+//MARK: - Actionable
+extension CouponsCollectionCell: Actionable {
+    public typealias Actions = (_ coupon: Coupon?) -> Void
 }

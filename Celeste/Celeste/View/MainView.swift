@@ -50,7 +50,7 @@ class MainView: UIView {
     let lockButton: CircularImageButton = {
         let view = CircularImageButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "lock"), dimensions: 42))
+        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "lock"), dimensions: 42, imageDimensions: 18))
         view.alpha = 0
         return view
     }()
@@ -58,7 +58,7 @@ class MainView: UIView {
     let refreshButton: CircularImageButton = {
         let view = CircularImageButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "refresh"), dimensions: 42))
+        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "refresh"), dimensions: 42, imageDimensions: 18))
         view.alpha = 0
         return view
     }()
@@ -66,7 +66,7 @@ class MainView: UIView {
     let nextButton: CircularImageButton = {
         let view = CircularImageButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "next"), dimensions: 50))
+        view.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "next"), dimensions: 50, imageDimensions: 18))
         view.alpha = 0
         return view
     }()

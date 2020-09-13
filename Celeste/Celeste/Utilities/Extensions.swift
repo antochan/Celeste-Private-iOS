@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 extension UIStackView {
     func addArrangedSubviews(_ arrangedViews: UIView...) {
@@ -115,6 +116,39 @@ extension UIViewController {
         OKAction.setValue(UIColor.black, forKey: "titleTextColor")
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    class func displaySpinner(onView : UIView, loadingText: String? = "Loading..") -> UIView {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        
+        let animationView = AnimationView(name: "Loader")
+        animationView.frame = CGRect(x:0, y: 0, width: 80, height: 80)
+        animationView.center = spinnerView.center
+        animationView.loopMode = .loop
+        animationView.contentMode = .scaleAspectFill
+        
+        let loadingLabel = UILabel()
+        loadingLabel.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
+        loadingLabel.textAlignment = .center
+        loadingLabel.text = loadingText
+        loadingLabel.font = UIFont.mainMedium(size: 18)
+        loadingLabel.center = CGPoint(x: animationView.center.x, y: animationView.center.y + 50)
+        
+        animationView.play()
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubviews(animationView, loadingLabel)
+            onView.addSubview(spinnerView)
+        }
+        
+        return spinnerView
+    }
+    
+    class func removeSpinner(spinner :UIView) {
+        DispatchQueue.main.async {
+            spinner.removeFromSuperview()
+        }
     }
 }
 

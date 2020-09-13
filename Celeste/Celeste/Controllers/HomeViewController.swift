@@ -56,7 +56,11 @@ class HomeViewController: UIViewController {
         
         homeView.couponsView.actions = { [weak self] _ in
             guard let strongSelf = self else { return }
-            strongSelf.presentCoupon(who: strongSelf.who)
+            strongSelf.homeView.handleDisappearAnimation { (done) in
+                if done {
+                    strongSelf.presentCoupon(who: strongSelf.who)
+                }
+            }
         }
     }
     

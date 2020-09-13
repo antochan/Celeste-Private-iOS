@@ -169,7 +169,7 @@ private extension AddCalendarEventView {
             
             submitButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Spacing.fortyEight),
             submitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.twentyFour),
-            submitButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour),
+            submitButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour)
         ])
     }
 }

@@ -89,15 +89,23 @@ class CouponsView: UIView {
     let couponsCarousel: FSPagerView = {
         let carousel = FSPagerView()
         carousel.translatesAutoresizingMaskIntoConstraints = false
-        carousel.scrollDirection = .vertical
-        carousel.itemSize = CGSize(width: 311, height: 335)
+        carousel.scrollDirection = .horizontal
+        carousel.itemSize = CGSize(width: UIScreen.main.bounds.width - 70, height: 335)
         return carousel
     }()
     
     let closeButton: CircularImageButton = {
         let button = CircularImageButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "cancel"), dimensions: 42))
+        button.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "cancel"), dimensions: 42, imageDimensions: 14))
+        button.alpha = 0
+        return button
+    }()
+    
+    let giftButton: CircularImageButton = {
+        let button = CircularImageButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "gift"), dimensions: 42, imageDimensions: 18))
         button.alpha = 0
         return button
     }()
@@ -121,6 +129,8 @@ class CouponsView: UIView {
                        animations: {
                         self.closeButton.alpha = 1
                         self.closeButton.transform = CGAffineTransform(translationX: 0, y: Spacing.thirtyTwo)
+                        self.giftButton.alpha = 1
+                        self.giftButton.transform = CGAffineTransform(translationX: 0, y: Spacing.thirtyTwo)
         })
     }
 }
@@ -137,14 +147,14 @@ private extension CouponsView {
     func configureSubviews() {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 815)
         outerCircleLayer.path = UIBezierPath(ovalIn: CGRect(x: (UIScreen.main.bounds.width - 325) / 2, y: 45, width: 325, height: 325)).cgPath
-        outerCircleLayer.strokeColor = UIColor.AppColors.koalaInnerCircleColor.withAlphaComponent(1.0).cgColor
+        outerCircleLayer.strokeColor = UIColor.AppColors.beige.withAlphaComponent(0.8).cgColor
         outerCircleLayer.lineWidth = 1.5
         outerCircleLayer.fillColor = UIColor.clear.cgColor
         
         scrollView.layer.addSublayer(outerCircleLayer)
         
-        addSubviews(scrollView, closeButton)
-        scrollView.addSubviews(innerCircleView, pinkStarView, yellowStarView, blueStarView, topDivider, middleDivider, bottomDivider, couponsCarousel)
+        addSubviews(scrollView, closeButton, giftButton)
+        scrollView.addSubviews(innerCircleView, pinkStarView, yellowStarView, blueStarView, couponsCarousel)
         innerCircleView.addSubview(koalaImageView)
         
         guard let pinkPoint = outerCircleLayer.path?.getPathElementsPoints().first else { return }
@@ -174,23 +184,17 @@ private extension CouponsView {
             koalaImageView.leadingAnchor.constraint(equalTo: innerCircleView.leadingAnchor, constant: Spacing.forty),
             koalaImageView.trailingAnchor.constraint(equalTo: innerCircleView.trailingAnchor, constant: -Spacing.forty),
             koalaImageView.bottomAnchor.constraint(equalTo: innerCircleView.bottomAnchor, constant: -Spacing.forty),
-            
-            topDivider.topAnchor.constraint(equalTo: innerCircleView.bottomAnchor, constant: 30 + Spacing.twentyFour),
-            topDivider.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            middleDivider.topAnchor.constraint(equalTo: topDivider.bottomAnchor, constant: Spacing.eight),
-            middleDivider.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            bottomDivider.topAnchor.constraint(equalTo: middleDivider.bottomAnchor, constant: Spacing.eight),
-            bottomDivider.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            couponsCarousel.topAnchor.constraint(equalTo: bottomDivider.bottomAnchor, constant: Spacing.sixteen),
+    
+            couponsCarousel.topAnchor.constraint(equalTo: innerCircleView.bottomAnchor, constant:  40 + Spacing.twentyFour),
             couponsCarousel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            couponsCarousel.widthAnchor.constraint(equalToConstant: 325),
+            couponsCarousel.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             couponsCarousel.heightAnchor.constraint(equalToConstant: 350),
             
             closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -Spacing.sixteen),
             closeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacing.twentyFour),
+            
+            giftButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -Spacing.sixteen),
+            giftButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacing.twentyFour),
         ])
     }
 }

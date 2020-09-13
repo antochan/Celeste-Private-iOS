@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct Coupon: Codable {
+    let id: String
     let title: String
     let description: String
     let redeemed: Bool?
