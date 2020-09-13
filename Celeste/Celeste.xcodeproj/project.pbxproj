@@ -40,6 +40,8 @@
 		8A95B777250DFDB7005BFE52 /* CarosSoftLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A95B776250DFDB6005BFE52 /* CarosSoftLight.otf */; };
 		8A95B779250DFDC9005BFE52 /* CarosSoftMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A95B778250DFDC9005BFE52 /* CarosSoftMedium.otf */; };
 		8A95B77B250DFDD4005BFE52 /* CarosSoftExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A95B77A250DFDD4005BFE52 /* CarosSoftExtraLight.otf */; };
+		8A95B77D250E0B34005BFE52 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95B77C250E0B34005BFE52 /* PhotoGalleryView.swift */; };
+		8A95B77F250E0B74005BFE52 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95B77E250E0B74005BFE52 /* PhotoGalleryViewController.swift */; };
 		8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A024E785E900442B80 /* HomeViewController.swift */; };
 		8A9A92A324E785F600442B80 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A224E785F600442B80 /* HomeView.swift */; };
 		8A9A92A524E8792900442B80 /* HomeSectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */; };
@@ -129,6 +131,8 @@
 		8A95B776250DFDB6005BFE52 /* CarosSoftLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarosSoftLight.otf; sourceTree = "<group>"; };
 		8A95B778250DFDC9005BFE52 /* CarosSoftMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarosSoftMedium.otf; sourceTree = "<group>"; };
 		8A95B77A250DFDD4005BFE52 /* CarosSoftExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarosSoftExtraLight.otf; sourceTree = "<group>"; };
+		8A95B77C250E0B34005BFE52 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
+		8A95B77E250E0B74005BFE52 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
 		8A9A92A024E785E900442B80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A9A92A224E785F600442B80 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8A9A92A424E8792900442B80 /* HomeSectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionComponent.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				8A9F1D7624FBAAE5000B203A /* AddCalendarEventViewController.swift */,
 				8A3CC6F424FDFDA70036DAAA /* CouponsViewController.swift */,
 				8A95B76D250D72DA005BFE52 /* GiftCouponViewController.swift */,
+				8A95B77E250E0B74005BFE52 /* PhotoGalleryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				8A9F1D7824FBAD73000B203A /* AddCalendarEventView.swift */,
 				8A3CC6F624FDFDB30036DAAA /* CouponsView.swift */,
 				8A95B76F250D72EC005BFE52 /* GiftCouponView.swift */,
+				8A95B77C250E0B34005BFE52 /* PhotoGalleryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,12 +634,14 @@
 				8A9A92A124E785E900442B80 /* HomeViewController.swift in Sources */,
 				8A7FD84F24E2575C0057F3C5 /* UserComponent.swift in Sources */,
 				8A9F1D7524FB8232000B203A /* CalendarServices.swift in Sources */,
+				8A95B77F250E0B74005BFE52 /* PhotoGalleryViewController.swift in Sources */,
 				8AB59B4B24E3C0E000582C74 /* Colors.swift in Sources */,
 				8AB59B4724E3BEEC00582C74 /* MainView.swift in Sources */,
 				8A7FD86024E258040057F3C5 /* ButtonComponent.swift in Sources */,
 				8A9F1D7724FBAAE5000B203A /* AddCalendarEventViewController.swift in Sources */,
 				8A7FD85724E257D90057F3C5 /* PressHighlightable.swift in Sources */,
 				8A106D3F24E2445F00BE8D34 /* AppDelegate.swift in Sources */,
+				8A95B77D250E0B34005BFE52 /* PhotoGalleryView.swift in Sources */,
 				8ABA5BD824EB501400A405F9 /* CalendarEvent.swift in Sources */,
 				8A3CC6F524FDFDA70036DAAA /* CouponsViewController.swift in Sources */,
 				8ADE68E324E6711000C4E3EE /* CircularImageButton.swift in Sources */,

@@ -62,6 +62,15 @@ class HomeViewController: UIViewController {
                 }
             }
         }
+        
+        homeView.photosGalleryView.actions = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.homeView.handleDisappearAnimation { (done) in
+                if done {
+                    strongSelf.presentPhotoGallery(who: strongSelf.who)
+                }
+            }
+        }
     }
     
     func presentCalendar(who: Who) {
@@ -78,6 +87,13 @@ class HomeViewController: UIViewController {
         couponViewController.modalPresentationStyle = .fullScreen
         couponViewController.isHeroEnabled = true
         present(couponViewController, animated: true)
+    }
+    
+    func presentPhotoGallery(who: Who) {
+        let photoGalleryViewController = PhotoGalleryViewController(who: who)
+        photoGalleryViewController.modalPresentationStyle = .fullScreen
+        photoGalleryViewController.isHeroEnabled = true
+        present(photoGalleryViewController, animated: true)
     }
     
     @objc func userImageTapped() {

@@ -97,7 +97,7 @@ class CouponsView: UIView {
     let closeButton: CircularImageButton = {
         let button = CircularImageButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "cancel"), dimensions: 42, imageDimensions: 14))
+        button.apply(viewModel: CircularImageButton.ViewModel(image: #imageLiteral(resourceName: "close"), dimensions: 42, imageDimensions: 14))
         button.alpha = 0
         return button
     }()

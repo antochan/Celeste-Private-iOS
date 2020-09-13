@@ -77,7 +77,7 @@ class HomeView: UIView {
     let couponsView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelYellow, titleText: "Coupon Rewards", sectionStyle: .horizontalHalf, image: #imageLiteral(resourceName: "gift_illustration")))
+        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.pastelYellow, titleText: "Coupon\nRewards", sectionStyle: .horizontalHalf, image: #imageLiteral(resourceName: "gift_illustration")))
         view.alpha = 0
         return view
     }()
@@ -85,7 +85,7 @@ class HomeView: UIView {
     let photosGalleryView: HomeSectionComponent = {
         let view = HomeSectionComponent()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.purple, titleText: "Photo Gallery", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Couple 3")))
+        view.apply(viewModel: HomeSectionComponent.ViewModel(backgroundColor: UIColor.AppColors.purple, titleText: "Photo\nGallery", sectionStyle: .verticalHalf, image: #imageLiteral(resourceName: "Couple 3")))
         view.alpha = 0
         return view
     }()

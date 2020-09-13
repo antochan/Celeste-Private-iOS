@@ -13,7 +13,7 @@ class OTPView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "left"), for: .normal)
         return button
     }()
     
